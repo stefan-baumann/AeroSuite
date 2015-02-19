@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Controls\AeroLinkLabel.cs" />
     <Compile Include="Controls\AeroTreeView.cs" />
+    <Compile Include="Controls\CueComboBox.cs" />
     <Compile Include="Controls\CueTextBox.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="PlatformHelper.cs" />
