@@ -92,7 +92,8 @@ namespace AeroSuite.Controls
         /// </summary>
         void ITestControl.PrepareForTests()
         {
-            TreeNode root = new TreeNode("Root", new TreeNode[] { new TreeNode("First Child", new TreeNode[] { new TreeNode("Second Child"), new TreeNode("Third Child") }), new TreeNode("Fourth Child"), });
+            this.ImageList = TestDataProvider.SmallImageList;
+            TreeNode root = new TreeNode("Root", 0, 0, new TreeNode[] { new TreeNode("First Child", 1, 1, new TreeNode[] { new TreeNode("Second Child", 2, 2), new TreeNode("Third Child", 3, 3) }), new TreeNode("Fourth Child", 4, 4), });
             this.Nodes.Add(root);
             this.ExpandAll();
             this.Size = new Size(150, 100);

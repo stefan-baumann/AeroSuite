@@ -45,12 +45,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\AeroLinkLabel.cs" />
+    <Compile Include="Controls\AeroListView.cs" />
     <Compile Include="Controls\AeroTreeView.cs" />
     <Compile Include="Controls\CueComboBox.cs" />
     <Compile Include="Controls\CueTextBox.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="PlatformHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\TestDataProvider.cs" />
     <Compile Include="Tests\ITestControl.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -59,5 +59,55 @@ namespace AeroSuite.Test.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon All_Users_Folder {
+            get {
+                object obj = ResourceManager.GetObject("All_Users_Folder", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Pictures {
+            get {
+                object obj = ResourceManager.GetObject("Pictures", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Recycle_Bin {
+            get {
+                object obj = ResourceManager.GetObject("Recycle_Bin", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon UAC {
+            get {
+                object obj = ResourceManager.GetObject("UAC", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Videos {
+            get {
+                object obj = ResourceManager.GetObject("Videos", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

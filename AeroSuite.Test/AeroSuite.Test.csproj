@@ -85,6 +85,21 @@
       <Name>AeroSuite</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UAC.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\All Users Folder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recycle Bin.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Videos.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
