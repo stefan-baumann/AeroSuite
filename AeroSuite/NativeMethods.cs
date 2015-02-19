@@ -21,6 +21,14 @@ namespace AeroSuite
         [DllImport(user32, CharSet = CharSet.Unicode)]
         public static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, string lParam);
 
+        [DllImport(user32)]
+        public static extern IntPtr LoadCursor(IntPtr hInstance, int lpCursorName);
+
+        [DllImport(user32)]
+        public static extern IntPtr SetCursor(IntPtr hCursor);
+
+
+
         [DllImport(uxtheme, CharSet = CharSet.Unicode)]
         public extern static int SetWindowTheme(IntPtr hWnd, string pszSubAppName, string pszSubIdList);
     }
