@@ -87,12 +87,9 @@ namespace AeroSuite.Controls
         /// </summary>
         private void UpdateCue()
         {
-            if (PlatformHelper.XpOrHigher)
+            if (this.IsHandleCreated && PlatformHelper.XpOrHigher)
             {
-                if (this.IsHandleCreated)
-                {
-                    NativeMethods.SendMessage(this.Handle, EM_SETCUEBANNER, (this.retainCue && PlatformHelper.VistaOrHigher) ? new IntPtr(1) : IntPtr.Zero, this.cue);
-                }
+                NativeMethods.SendMessage(this.Handle, EM_SETCUEBANNER, (this.retainCue && PlatformHelper.VistaOrHigher) ? new IntPtr(1) : IntPtr.Zero, this.cue);
             }
         }
 
