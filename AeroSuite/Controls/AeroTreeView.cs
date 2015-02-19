@@ -54,11 +54,11 @@ namespace AeroSuite.Controls
 
             if (PlatformHelper.VistaOrHigher)
             {
-                NativeMethods.SetWindowTheme(base.Handle, "explorer", null);
+                NativeMethods.SetWindowTheme(this.Handle, "explorer", null);
 
-                var style = NativeMethods.SendMessage(this.Handle, TVM_GETEXTENDEDSTYLE, IntPtr.Zero, IntPtr.Zero).ToInt32();
-                style |= (TVS_EX_AUTOHSCROLL | TVS_EX_FADEINOUTEXPANDOS | TVS_EX_DOUBLEBUFFER);
-                NativeMethods.SendMessage(this.Handle, TVM_SETEXTENDEDSTYLE, IntPtr.Zero, new IntPtr(style));
+                var lParam = NativeMethods.SendMessage(this.Handle, TVM_GETEXTENDEDSTYLE, IntPtr.Zero, IntPtr.Zero);
+                lParam = new IntPtr(lParam.ToInt32() | (TVS_EX_AUTOHSCROLL | TVS_EX_FADEINOUTEXPANDOS | TVS_EX_DOUBLEBUFFER));
+                NativeMethods.SendMessage(this.Handle, TVM_SETEXTENDEDSTYLE, IntPtr.Zero, lParam);
             }
         }
 
