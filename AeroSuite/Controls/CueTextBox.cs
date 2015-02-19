@@ -15,7 +15,7 @@ namespace AeroSuite.Controls
     /// A cue banner is the text that is shown when the TextBox is empty.
     /// </remarks>
     [DesignerCategory("Code")]
-    [DisplayName("Aero TreeView")]
+    [DisplayName("Cue TextBox")]
     [Description("A TextBox with cue banner support.")]
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(TextBox))]
@@ -28,6 +28,7 @@ namespace AeroSuite.Controls
         /// Initializes a new instance of the <see cref="CueTextBox"/> class.
         /// </summary>
         public CueTextBox()
+            : base()
         {
             this.UpdateCue();
         }
