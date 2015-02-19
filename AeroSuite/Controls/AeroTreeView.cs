@@ -22,7 +22,7 @@ namespace AeroSuite.Controls
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(TreeView))]
     public class AeroTreeView
-        : TreeView
+        : TreeView, ITestControl
     {
         private const int TVS_EX_DOUBLEBUFFER = 0x4;
         private const int TVS_EX_AUTOHSCROLL = 0x20;
@@ -83,6 +83,19 @@ namespace AeroSuite.Controls
                 parameters.Style = parameters.Style | TVS_NOHSCROLL;
                 return parameters;
             }
+        }
+
+
+
+        /// <summary>
+        /// Prepares the control for tests (setting properties etc.).
+        /// </summary>
+        void ITestControl.PrepareForTests()
+        {
+            TreeNode root = new TreeNode("Root", new TreeNode[] { new TreeNode("First Child", new TreeNode[] { new TreeNode("Second Child"), new TreeNode("Third Child") }), new TreeNode("Fourth Child"), });
+            this.Nodes.Add(root);
+            this.ExpandAll();
+            this.Size = new Size(150, 100);
         }
     }
 }

@@ -49,6 +49,7 @@
     <Compile Include="NativeMethods.cs" />
     <Compile Include="PlatformHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\ITestControl.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
