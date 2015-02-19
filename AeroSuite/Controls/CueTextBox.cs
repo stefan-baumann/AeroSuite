@@ -88,9 +88,9 @@ namespace AeroSuite.Controls
         {
             if (PlatformHelper.XpOrHigher)
             {
-                if (this.IsHandleCreated && this.cue != null)
+                if (this.IsHandleCreated)
                 {
-                    NativeMethods.SendMessage(this.Handle, EM_SETCUEBANNER, this.retainCue ? new IntPtr(1) : IntPtr.Zero, this.cue);
+                    NativeMethods.SendMessage(this.Handle, EM_SETCUEBANNER, (this.retainCue && PlatformHelper.VistaOrHigher) ? new IntPtr(1) : IntPtr.Zero, this.cue);
                 }
             }
         }
