@@ -78,7 +78,7 @@ namespace AeroSuite.Controls
         /// <param name="e">The <see cref="PaintEventArgs"/> instance containing the event data.</param>
         protected override void OnPaint(PaintEventArgs e)
         {
-            if (PlatformHelper.VistaOrHigher && PlatformHelper.VisualStylesEnabled)
+            if (Application.RenderWithVisualStyles && VisualStyleRenderer.IsElementDefined(VisualStyleElement.CreateElement("Navigation", 0, 0))/*PlatformHelper.VistaOrHigher && PlatformHelper.VisualStylesEnabled*/) //This seems to be the right check according to the MSDN: https://msdn.microsoft.com/en-us/library/vstudio/ms171735(v=vs.100).aspx
             {
                 this.PaintWithVisualStyles(e.Graphics);
             }
