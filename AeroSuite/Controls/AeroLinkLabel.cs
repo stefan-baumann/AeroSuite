@@ -54,8 +54,8 @@ namespace AeroSuite.Controls
             {
                 //Extract colors from system colors
                 this.defaultColor = SystemColors.HotTrack;
-                this.activeColor = SystemColors.HighlightText;
-                this.pressedColor = SystemColors.HighlightText;
+                this.activeColor = SystemColors.Highlight;
+                this.pressedColor = SystemColors.Highlight;
                 this.visitedColor = this.VisitedLinkColor; //Don't know how to get this property so I use the default one.
                 this.disabledColor = SystemColors.GrayText;
             }
