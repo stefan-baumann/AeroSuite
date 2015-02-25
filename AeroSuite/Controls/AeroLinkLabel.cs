@@ -39,7 +39,7 @@ namespace AeroSuite.Controls
         public AeroLinkLabel()
             : base()
         {
-            if (PlatformHelper.VistaOrHigher)
+            if (PlatformHelper.VistaOrHigher && PlatformHelper.VisualStylesEnabled)
             {
                 this.LinkBehavior = LinkBehavior.HoverUnderline;
 

@@ -37,6 +37,7 @@ namespace AeroSuite.Controls
         public AeroTreeView()
             : base()
         {
+            //Altough those settings should be compatible to every OS, there's no need to set it on Non-Aero Systems
             if (PlatformHelper.VistaOrHigher)
             {
                 this.HotTracking = true;
@@ -74,6 +75,7 @@ namespace AeroSuite.Controls
         {
             get
             {
+                //If we are on a machine on which we don't want to apply any styles just return the value given by the base TreeView.
                 if (!PlatformHelper.VistaOrHigher)
                 {
                     return base.CreateParams;

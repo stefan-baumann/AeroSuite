@@ -60,7 +60,7 @@ namespace AeroSuite.Controls
         /// </summary>
         private void UpdateCue()
         {
-            if (this.IsHandleCreated && PlatformHelper.VistaOrHigher)
+            if (this.IsHandleCreated && PlatformHelper.VistaOrHigher) //Cue banners in ComboBoxes are not supported on Windows XP altough they are in TextBoxes??
             {
                 NativeMethods.SendMessage(this.Handle, CB_SETCUEBANNER, IntPtr.Zero, this.cue);
             }
