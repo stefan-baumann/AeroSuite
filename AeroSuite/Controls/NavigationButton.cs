@@ -18,7 +18,7 @@ namespace AeroSuite.Controls
     /// </remarks>
     [DesignerCategory("Code")]
     [Designer(typeof(NavigationButtonDesigner))]
-    [DisplayName("Aero LinkLabel")]
+    [DisplayName("Navigation Button")]
     [Description("A simple Back/Forward Button drawn by Windows via Visual Styles if available.")]
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(Button))]
