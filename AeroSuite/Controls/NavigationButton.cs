@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
 using System.Windows.Forms.VisualStyles;
 
 namespace AeroSuite.Controls
@@ -16,6 +17,7 @@ namespace AeroSuite.Controls
     /// The button is drawn with Visual Styles (Navigation > BackButton/ForwardButton). If running on XP or another OS, the button is drawn manually (in a kinda-Metro-Style)
     /// </remarks>
     [DesignerCategory("Code")]
+    [Designer(typeof(NavigationButtonDesigner))]
     [DisplayName("Aero LinkLabel")]
     [Description("A simple Back/Forward Button drawn by Windows via Visual Styles if available.")]
     [ToolboxItem(true)]
@@ -205,14 +207,38 @@ namespace AeroSuite.Controls
 
             base.OnKeyDown(e);
         }
+
+
+
+
+        /// <summary>
+        /// Provides a ControlDesigner for the <see cref="NavigationButton"/> Control.
+        /// </summary>
+        internal class NavigationButtonDesigner
+            : ControlDesigner
+        {
+            /// <summary>
+            /// Returns selection rules for the <see cref="NavigationButton"/> Control.
+            /// </summary>
+            /// <value>
+            /// The selection rules.
+            /// </value>
+            public override SelectionRules SelectionRules
+            {
+                get
+                {
+                    return SelectionRules.Moveable;
+                }
+            }
+        }
     }
 
 
 
-    /// <summary>
-    /// The Type of a <see cref="NavigationButton"/>.
-    /// </summary>
-    public enum NavigationButtonType
+        /// <summary>
+        /// The Type of a <see cref="NavigationButton"/>.
+        /// </summary>
+        public enum NavigationButtonType
     {
         /// <summary>
         /// Represents a backward button.
