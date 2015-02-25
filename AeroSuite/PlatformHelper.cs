@@ -109,5 +109,13 @@ namespace AeroSuite
                 return VisualStyleInformation.IsEnabledByUser;
             }
         }
+
+        public static bool UseVisualStyles
+        {
+            get
+            {
+                return VisualStyleRenderer.IsSupported;
+            }
+        }
     }
 }

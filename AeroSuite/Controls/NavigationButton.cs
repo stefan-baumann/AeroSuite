@@ -191,6 +191,20 @@ namespace AeroSuite.Controls
             this.Invalidate();
             base.OnEnabledChanged(e);
         }
+
+        /// <summary>
+        /// Raises the <see cref="E:KeyDown" /> event.
+        /// </summary>
+        /// <param name="e">The <see cref="System.Windows.Forms.KeyEventArgs" /> instance containing the event data.</param>
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Space)
+            {
+                this.InvokeOnClick(this, EventArgs.Empty);
+            }
+
+            base.OnKeyDown(e);
+        }
     }
 
 
