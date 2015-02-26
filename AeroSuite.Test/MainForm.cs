@@ -23,24 +23,31 @@ namespace AeroSuite.Test
             //Load AeroSuite
             var library = Assembly.Load("AeroSuite");
             var exportedTypes = library.GetExportedTypes();
-            var controls = exportedTypes.Where(t => typeof(Control).IsAssignableFrom(t) && !typeof(Form).IsAssignableFrom(t));
+            var controls = exportedTypes.Where(t => typeof(Control).IsAssignableFrom(t) && !typeof(Form).IsAssignableFrom(t) && !t.IsAbstract && t.IsPublic && t.IsVisible && !t.IsGenericType);
             this.TypeComboBox.DataSource = controls.ToList();
             this.TypeComboBox.DisplayMember = "Name";
             this.TypeComboBox.SelectedIndex = 0;
 
             //Load stuff for TestDataProvider
-            TestDataProvider.SmallImageList = new ImageList() { ColorDepth = ColorDepth.Depth32Bit, ImageSize = new Size(16, 16) };
-            TestDataProvider.SmallImageList.Images.Add(new Icon(Properties.Resources.All_Users_Folder, new Size(16, 16)).ToBitmap());
-            TestDataProvider.SmallImageList.Images.Add(new Icon(Properties.Resources.Pictures, new Size(16, 16)).ToBitmap());
-            TestDataProvider.SmallImageList.Images.Add(new Icon(Properties.Resources.Recycle_Bin, new Size(16, 16)).ToBitmap());
-            TestDataProvider.SmallImageList.Images.Add(new Icon(Properties.Resources.UAC, new Size(16, 16)).ToBitmap());
-            TestDataProvider.SmallImageList.Images.Add(new Icon(Properties.Resources.Videos, new Size(16, 16)).ToBitmap());
-            TestDataProvider.LargeImageList = new ImageList() { ColorDepth = ColorDepth.Depth32Bit, ImageSize = new Size(48, 48) };
-            TestDataProvider.LargeImageList.Images.Add(new Icon(Properties.Resources.All_Users_Folder, new Size(48, 48)).ToBitmap());
-            TestDataProvider.LargeImageList.Images.Add(new Icon(Properties.Resources.Pictures, new Size(48, 48)).ToBitmap());
-            TestDataProvider.LargeImageList.Images.Add(new Icon(Properties.Resources.Recycle_Bin, new Size(48, 48)).ToBitmap());
-            TestDataProvider.LargeImageList.Images.Add(new Icon(Properties.Resources.UAC, new Size(48, 48)).ToBitmap());
-            TestDataProvider.LargeImageList.Images.Add(new Icon(Properties.Resources.Videos, new Size(48, 48)).ToBitmap());
+            try
+            {
+                TestDataProvider.SmallImageList = new ImageList() { ColorDepth = ColorDepth.Depth32Bit, ImageSize = new Size(16, 16) };
+                TestDataProvider.SmallImageList.Images.Add(new Icon(Properties.Resources.All_Users_Folder, new Size(16, 16)).ToBitmap());
+                TestDataProvider.SmallImageList.Images.Add(new Icon(Properties.Resources.Pictures, new Size(16, 16)).ToBitmap());
+                TestDataProvider.SmallImageList.Images.Add(new Icon(Properties.Resources.Recycle_Bin, new Size(16, 16)).ToBitmap());
+                TestDataProvider.SmallImageList.Images.Add(new Icon(Properties.Resources.UAC, new Size(16, 16)).ToBitmap());
+                TestDataProvider.SmallImageList.Images.Add(new Icon(Properties.Resources.Videos, new Size(16, 16)).ToBitmap());
+                TestDataProvider.LargeImageList = new ImageList() { ColorDepth = ColorDepth.Depth32Bit, ImageSize = new Size(48, 48) };
+                TestDataProvider.LargeImageList.Images.Add(new Icon(Properties.Resources.All_Users_Folder, new Size(48, 48)).ToBitmap());
+                TestDataProvider.LargeImageList.Images.Add(new Icon(Properties.Resources.Pictures, new Size(48, 48)).ToBitmap());
+                TestDataProvider.LargeImageList.Images.Add(new Icon(Properties.Resources.Recycle_Bin, new Size(48, 48)).ToBitmap());
+                TestDataProvider.LargeImageList.Images.Add(new Icon(Properties.Resources.UAC, new Size(48, 48)).ToBitmap());
+                TestDataProvider.LargeImageList.Images.Add(new Icon(Properties.Resources.Videos, new Size(48, 48)).ToBitmap());
+            }
+            catch (System.Reflection.TargetInvocationException)
+            {
+                //Throws an exception on Linux (don't know why yet)
+            }
         }
 
         private Control currentControl;
