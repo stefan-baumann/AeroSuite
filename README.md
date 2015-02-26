@@ -2,6 +2,7 @@
 <p>AeroSuite is a WinForms Control Library that provides extended functionality for pre-existing controls and also new controls. Unlike most (if not all) similar libraries, this library is aimed at supporting every platform: Windows XP to 10 and Linux with Mono are supported.</p>
 <p>Every control is drawn natively by the system. If this is not supported by the operating system, it will automatically fall back to a custom-drawn version. That allows the seamless use on every platform.</p>
 <p>There are not many controls in the library right now as it is still in a early stage of development. About 20 more controls are already implemented and just waiting to be revised and released.</p>
+<p>Although this library is released under the MIT license that allows you to do almost anything with it I'd like to be mentioned in your about-dialog/credits/whatever as the creator of this library.</p>
 
 # Planned
 - Add more controls (the obvious task)
