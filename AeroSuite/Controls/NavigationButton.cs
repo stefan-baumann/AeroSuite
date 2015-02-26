@@ -22,6 +22,8 @@ namespace AeroSuite.Controls
     [Description("A simple Back/Forward Button drawn by Windows via Visual Styles if available.")]
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(Button))]
+    [PlatformSupport(Platform.WindowsAero, PlatformSupportType.Native)]
+    [PlatformSupport(Platform.WindowsXP | Platform.WindowsClassic | Platform.LinuxMono, PlatformSupportType.Workaround)] //Not done yet ^^
     public class NavigationButton
         : Control
     {

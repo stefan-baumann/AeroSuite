@@ -19,6 +19,8 @@ namespace AeroSuite.Controls
     [Description("A TextBox with cue banner support.")]
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(TextBox))]
+    [PlatformSupport(Platform.WindowsAero, PlatformSupportType.Native)]
+    [PlatformSupport(Platform.WindowsXP | Platform.WindowsClassic | Platform.LinuxMono, PlatformSupportType.Partial)]
     public class CueTextBox
         : TextBox, ITestControl
     {

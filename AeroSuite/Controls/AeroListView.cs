@@ -21,6 +21,8 @@ namespace AeroSuite.Controls
     [Description("An aero-styled ListView.")]
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(ListView))]
+    [PlatformSupport(Platform.WindowsAero, PlatformSupportType.Native)]
+    [PlatformSupport(Platform.WindowsXP | Platform.WindowsClassic | Platform.LinuxMono, PlatformSupportType.Workaround)]
     public class AeroListView
         : ListView, ITestControl
     {
