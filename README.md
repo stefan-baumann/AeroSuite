@@ -3,6 +3,11 @@
 <p>Every control is drawn natively by the system. If this is not supported by the operating system, it will automatically fall back to a custom-drawn version. That allows the seamless use on every platform.</p>
 <p>There are not many controls in the library right now as it is still in a early stage of development. About 20 more controls are already implemented and just waiting to be revised and released.</p>
 
+# Planned
+- Add more controls (the obvious task)
+- More cross-platform compatibility/support
+- Add screenshots from different platforms to the control documentation
+
 # Controls
 The following controls are currently available:
 - [AeroLinkLabel](#aerolinklabel)
