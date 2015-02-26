@@ -5,13 +5,13 @@
 
 # Controls
 The following controls are currently available:
-- AeroLinkLabel
-- AeroListView
-- AeroTreeView
-- BottomPanel
-- CueComboBox
-- CueTextBox
-- NavigationButton
+- [AeroLinkLabel](#aerolinklabel)
+- [AeroListView](#aerolistview)
+- [AeroTreeView](#aerotreeview)
+- [BottomPanel](#bottompanel)
+- [CueComboBox](#cuecombobox)
+- [CueTextBox](#cuetextbox)
+- [NavigationButton](#navigationbutton)
 
 ## AeroLinkLabel
 The AeroLinkLabel is a link label with improved styling: The colors are either extracted from the system's visual styles (`TextStyle > HyperLinkText`) or taken from the SystemColors-class. It also fixes Microsoft's fault with the hand cursor by using the system's hand cursor.
