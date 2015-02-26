@@ -7,6 +7,7 @@
 - Add more controls (the obvious task)
 - More cross-platform compatibility/support
 - Add screenshots from different platforms to the control documentation
+- Provide class diagrams for the important things
 
 # Controls
 The following controls are currently available:
