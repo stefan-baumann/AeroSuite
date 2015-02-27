@@ -53,7 +53,6 @@
     <Compile Include="Controls\NavigationButton.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="PlatformHelper.cs" />
-    <Compile Include="PlatformSupportAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\TestDataProvider.cs" />
     <Compile Include="Tests\ITestControl.cs" />

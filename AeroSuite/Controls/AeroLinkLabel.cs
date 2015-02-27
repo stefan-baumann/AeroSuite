@@ -21,8 +21,6 @@ namespace AeroSuite.Controls
     [Description("A LinkLabel whose colors fit the Windows style. It also has a fixed hand cursor.")]
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(LinkLabel))]
-    [PlatformSupport(Platform.WindowsAero, PlatformSupportType.Native)]
-    [PlatformSupport(Platform.WindowsXP | Platform.WindowsClassic | Platform.LinuxMono, PlatformSupportType.Workaround)]
     public class AeroLinkLabel
         : LinkLabel
     {
