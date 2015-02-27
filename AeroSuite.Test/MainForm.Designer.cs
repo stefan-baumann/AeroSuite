@@ -31,6 +31,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.ControlPropertyGrid = new System.Windows.Forms.PropertyGrid();
             this.TypeComboBox = new System.Windows.Forms.ComboBox();
+            this.HideGridButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -39,6 +40,8 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -46,6 +49,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.ControlPropertyGrid);
             this.splitContainer1.Panel2.Controls.Add(this.TypeComboBox);
+            this.splitContainer1.Panel2.Controls.Add(this.HideGridButton);
+            this.splitContainer1.Panel2MinSize = 0;
             this.splitContainer1.Size = new System.Drawing.Size(851, 530);
             this.splitContainer1.SplitterDistance = 425;
             this.splitContainer1.SplitterWidth = 5;
@@ -54,9 +59,9 @@
             // ControlPropertyGrid
             // 
             this.ControlPropertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ControlPropertyGrid.Location = new System.Drawing.Point(0, 21);
+            this.ControlPropertyGrid.Location = new System.Drawing.Point(0, 44);
             this.ControlPropertyGrid.Name = "ControlPropertyGrid";
-            this.ControlPropertyGrid.Size = new System.Drawing.Size(421, 509);
+            this.ControlPropertyGrid.Size = new System.Drawing.Size(421, 486);
             this.ControlPropertyGrid.TabIndex = 2;
             // 
             // TypeComboBox
@@ -64,11 +69,22 @@
             this.TypeComboBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.TypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TypeComboBox.FormattingEnabled = true;
-            this.TypeComboBox.Location = new System.Drawing.Point(0, 0);
+            this.TypeComboBox.Location = new System.Drawing.Point(0, 23);
             this.TypeComboBox.Name = "TypeComboBox";
             this.TypeComboBox.Size = new System.Drawing.Size(421, 21);
             this.TypeComboBox.TabIndex = 1;
             this.TypeComboBox.SelectedIndexChanged += new System.EventHandler(this.TypeComboBox_SelectedIndexChanged);
+            // 
+            // HideGridButton
+            // 
+            this.HideGridButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HideGridButton.Location = new System.Drawing.Point(0, 0);
+            this.HideGridButton.Name = "HideGridButton";
+            this.HideGridButton.Size = new System.Drawing.Size(421, 23);
+            this.HideGridButton.TabIndex = 3;
+            this.HideGridButton.Text = "Hide Property Grid";
+            this.HideGridButton.UseVisualStyleBackColor = true;
+            this.HideGridButton.Click += new System.EventHandler(this.HideGridButton_Click);
             // 
             // MainForm
             // 
@@ -93,6 +109,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.PropertyGrid ControlPropertyGrid;
         private System.Windows.Forms.ComboBox TypeComboBox;
+        private System.Windows.Forms.Button HideGridButton;
     }
 }
 

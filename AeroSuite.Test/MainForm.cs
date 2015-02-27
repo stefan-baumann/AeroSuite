@@ -58,8 +58,8 @@ namespace AeroSuite.Test
             this.splitContainer1.Panel1.Controls.Add(this.currentControl = (Control)Activator.CreateInstance(type));
 
             this.currentControl.Text = type.Name;
-            this.currentControl.Location = new Point((this.splitContainer1.Panel1.Width - this.currentControl.Width) / 2, (this.splitContainer1.Panel1.Height - this.currentControl.Height) / 2);
             this.currentControl.SizeChanged += (s, ea) => this.currentControl.Location = new Point((this.splitContainer1.Panel1.Width - this.currentControl.Width) / 2, (this.splitContainer1.Panel1.Height - this.currentControl.Height) / 2);
+            this.currentControl.Location = new Point((this.splitContainer1.Panel1.Width - this.currentControl.Width) / 2, (this.splitContainer1.Panel1.Height - this.currentControl.Height) / 2);
 
             if (typeof(ITestControl).IsAssignableFrom(type))
             {
@@ -68,6 +68,11 @@ namespace AeroSuite.Test
 
 
             this.ControlPropertyGrid.SelectedObject = this.currentControl;
+        }
+
+        private void HideGridButton_Click(object sender, EventArgs e)
+        {
+            this.ClientSize = new Size(this.splitContainer1.Panel1.Width, this.ClientSize.Height);
         }
     }
 }
