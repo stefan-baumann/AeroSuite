@@ -20,6 +20,7 @@ The following controls are currently available:
 - [CueTextBox](#cuetextbox)
 - [HeaderlessTabControl](#headerlesstabcontrol)
 - [NavigationButton](#navigationbutton)
+- [Seperator](#seperator)
 
 ## AeroLinkLabel
 The AeroLinkLabel is a link label with improved styling: The colors are either extracted from the system's visual styles (`TextStyle > HyperLinkText`) or taken from the SystemColors-class. It also fixes Microsoft's fault with the hand cursor by using the system's hand cursor.
@@ -68,6 +69,12 @@ This control works on every Windows version without problems. On Linux (at least
 
 ## NavigationButton
 A round button with an arrow in it that either points backwards or forwards as you know it from the Windows Explorer. As it is drawn by the system via visual styles (`Navigation > BackButton / ForwardButton`), it adapts to the windows theme. Alternatively it uses a simple custom Renderer to draw it.
+- [x] Windows Aero support (Vista, 7, 8, 10)
+- [x] Windows XP & Classic support (via custom drawing)
+- [x] Linux (Mono) support (via custom drawing)
+
+## NavigationButton
+A simple horizontal seperator line. As it is drawn by the system via visual styles (`TaskDialog > FootnoteSeperator`), it adapts to the windows theme. Alternatively it uses a simple custom Renderer to draw it.
 - [x] Windows Aero support (Vista, 7, 8, 10)
 - [x] Windows XP & Classic support (via custom drawing)
 - [x] Linux (Mono) support (via custom drawing)
