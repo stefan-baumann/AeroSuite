@@ -67,7 +67,7 @@ This control works on every Windows version without problems. On Linux (at least
 - [x] Linux (Mono) support (due to a bug, the tab headers are still partially shown)
 
 ## NavigationButton
-A round button with an arrow in it that either points backwards or forwards as you know it from the Windows Explorer. As it is drawn by the system via visual styles (`Navigation > BackButton / ForwardButton`), it adapts to the windows theme. I will add a custom render method to support other systems shortly. At the moment, this is the only control that does work on Windows Aero only.
+A round button with an arrow in it that either points backwards or forwards as you know it from the Windows Explorer. As it is drawn by the system via visual styles (`Navigation > BackButton / ForwardButton`), it adapts to the windows theme. Alternatively it uses a simple custom Renderer to draw it.
 - [x] Windows Aero support (Vista, 7, 8, 10)
 - [x] Windows XP & Classic support (via custom drawing)
 - [x] Linux (Mono) support (via custom drawing)
