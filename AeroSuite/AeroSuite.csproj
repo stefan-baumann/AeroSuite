@@ -52,6 +52,7 @@
     <Compile Include="Controls\CueTextBox.cs" />
     <Compile Include="Controls\HeaderlessTabControl.cs" />
     <Compile Include="Controls\NavigationButton.cs" />
+    <Compile Include="Controls\Seperator.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="PlatformHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
