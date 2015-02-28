@@ -50,6 +50,7 @@
     <Compile Include="Controls\BottomPanel.cs" />
     <Compile Include="Controls\CueComboBox.cs" />
     <Compile Include="Controls\CueTextBox.cs" />
+    <Compile Include="Controls\HeaderlessTabControl.cs" />
     <Compile Include="Controls\NavigationButton.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="PlatformHelper.cs" />
