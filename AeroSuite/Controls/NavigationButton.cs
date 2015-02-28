@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -110,13 +111,64 @@ namespace AeroSuite.Controls
             }
         }
 
+
+        protected Pen normalPen;
+        protected Brush hoverBrush;
+        protected Pen hoverArrowPen;
+        protected Brush pressedBrush;
+        protected Pen pressedArrowPen;
+        protected Pen disabledPen;
         /// <summary>
         /// Paints the button manually.
         /// </summary>
         /// <param name="g">The targeted graphics.</param>
         protected virtual void PaintManually(Graphics g)
         {
-            throw new NotImplementedException();
+            if (normalPen == null)
+            {
+                normalPen = new Pen(SystemColors.ControlDark, 2);
+                hoverBrush = new SolidBrush(SystemColors.ControlDark);
+                hoverArrowPen = new Pen(this.BackColor, 2);
+                pressedBrush = new SolidBrush(SystemColors.ControlDarkDark);
+                pressedArrowPen = new Pen(this.BackColor, 2);
+                disabledPen = new Pen(SystemColors.ControlLight, 2);
+            }
+
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+
+            using (GraphicsPath gp = new GraphicsPath())
+            {
+                gp.AddLines(new PointF[] { new PointF(this.Width * 0.5f, this.Height * 0.25f), new PointF(this.Width * 0.25f, this.Height * 0.5f), new PointF(this.Width * 0.5f, this.Height * 0.75f) });
+                gp.StartFigure();
+                gp.AddLine(new PointF(this.Width * 0.25f, this.Height * 0.5f), new PointF(this.Width * 0.75f, this.Height * 0.5f));
+
+                switch (this.state)
+                {
+                    case PushButtonState.Normal:
+                        g.DrawEllipse(this.normalPen, new Rectangle(2, 2, this.Width - 4, this.Height - 4));
+                        g.DrawPath(this.normalPen, gp);
+                        break;
+                    case PushButtonState.Hot:
+                        g.FillEllipse(this.hoverBrush, new Rectangle(1, 1, this.Width - 2, this.Height - 2));
+                        g.DrawPath(this.hoverArrowPen, gp);
+                        break;
+                    case PushButtonState.Pressed:
+                        g.FillEllipse(this.pressedBrush, new Rectangle(1, 1, this.Width - 2, this.Height - 2));
+                        g.DrawPath(this.pressedArrowPen, gp);
+                        break;
+                    default:
+                        g.DrawEllipse(this.disabledPen, new Rectangle(2, 2, this.Width - 4, this.Height - 4));
+                        g.DrawPath(this.disabledPen, gp);
+                        break;
+                }
+            }
+
+
+
+            //using (GraphicsPath gp = new GraphicsPath())
+            //{
+            //    gp.AddEllipse(new Rectangle(2, 2, this.Width - 4, this.Height - 4));
+            //}
         }
 
         /// <summary>
@@ -206,6 +258,22 @@ namespace AeroSuite.Controls
             }
 
             base.OnKeyDown(e);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            //Dispose brushes and pens if manual drawing was used
+            if (this.normalPen != null)
+            {
+                this.normalPen.Dispose();
+                this.hoverBrush.Dispose();
+                this.hoverArrowPen.Dispose();
+                this.pressedBrush.Dispose();
+                this.pressedArrowPen.Dispose();
+                this.disabledPen.Dispose();
+            }
+
+            base.Dispose(disposing);
         }
 
 
