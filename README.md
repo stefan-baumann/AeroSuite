@@ -73,7 +73,7 @@ A round button with an arrow in it that either points backwards or forwards as y
 - [x] Windows XP & Classic support (via custom drawing)
 - [x] Linux (Mono) support (via custom drawing)
 
-## NavigationButton
+## Seperator
 A simple horizontal seperator line. As it is drawn by the system via visual styles (`TaskDialog > FootnoteSeperator`), it adapts to the windows theme. Alternatively it uses a simple custom Renderer to draw it.
 - [x] Windows Aero support (Vista, 7, 8, 10)
 - [x] Windows XP & Classic support (via custom drawing)
