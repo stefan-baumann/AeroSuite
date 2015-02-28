@@ -18,6 +18,7 @@ The following controls are currently available:
 - [BottomPanel](#bottompanel)
 - [CueComboBox](#cuecombobox)
 - [CueTextBox](#cuetextbox)
+- [HeaderlessTabControl](#headerlesstabcontrol)
 - [NavigationButton](#navigationbutton)
 
 ## AeroLinkLabel
@@ -63,3 +64,10 @@ A round button with an arrow in it that either points backwards or forwards as y
 - [x] Windows Aero support (Vista, 7, 8, 10)
 - [ ] Windows XP & Classic support (not natively supported by the os)
 - [ ] Linux (Mono) support (not natively supported by the os)
+
+## HeaderlessTabControl
+A tab control that does not have tab headers at run time. For usability purposes, the headers are shown at design time.
+This control works on every Windows version without problems. On Linux (at least Linux Mint) there is a problem with the headers not being fully hidden.
+- [x] Windows Aero support (Vista, 7, 8, 10)
+- [x] Windows XP & Classic support
+- [x] Linux (Mono) support (due to a bug, the tab headers are still partially shown)
