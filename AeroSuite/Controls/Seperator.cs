@@ -20,6 +20,7 @@ namespace AeroSuite.Controls
     [DesignerCategory("Code")]
     [Designer(typeof(SeperatorDesigner))]
     [DisplayName("Seperator")]
+    [DefaultProperty("")]
     [Description("A seperator line drawn by Windows via Visual Styles if available.")]
     [ToolboxItem(true)]
     //[ToolboxBitmap(typeof())] //Need to create a bitmap for this one
@@ -46,7 +47,6 @@ namespace AeroSuite.Controls
         public Seperator()
         {
             this.TabStop = false;
-            this.Text = null;
             this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, true);
             this.UpdateStyles();
         }
@@ -67,6 +67,8 @@ namespace AeroSuite.Controls
             set
             {
                 base.Text = value;
+                //Make it work in the test project & designer -> remove Exception
+                //throw new NotSupportedException("This control does not support a Text");
             }
         }
 
