@@ -73,14 +73,7 @@ namespace AeroSuite.Controls
         /// <param name="g">The targeted graphics.</param>
         protected virtual void PaintWithVisualStyles(Graphics g)
         {
-            //Draw button
             new VisualStyleRenderer("TaskDialog", 8, 0).DrawBackground(g, this.DisplayRectangle);
-
-            //Draw Focus Rectangle
-            if (this.Focused && this.ShowFocusCues)
-            {
-                ControlPaint.DrawFocusRectangle(g, this.DisplayRectangle);
-            }
         }
 
         /// <summary>
