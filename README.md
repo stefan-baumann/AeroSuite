@@ -59,15 +59,15 @@ As with the CueComboBox, I'm working on a manual way to show such a text manuall
 - [x] Windows XP & Classic support (partial support: the `RetainCue` property is not supported)
 - [ ] Linux (Mono) support (not natively supported by the os)
 
-## NavigationButton
-A round button with an arrow in it that either points backwards or forwards as you know it from the Windows Explorer. As it is drawn by the system via visual styles (`Navigation > BackButton / ForwardButton`), it adapts to the windows theme. I will add a custom render method to support other systems shortly. At the moment, this is the only control that does work on Windows Aero only.
-- [x] Windows Aero support (Vista, 7, 8, 10)
-- [ ] Windows XP & Classic support (not natively supported by the os)
-- [ ] Linux (Mono) support (not natively supported by the os)
-
 ## HeaderlessTabControl
 A tab control that does not have tab headers at run time. For usability purposes, the headers are shown at design time.
 This control works on every Windows version without problems. On Linux (at least Linux Mint) there is a problem with the headers not being fully hidden.
 - [x] Windows Aero support (Vista, 7, 8, 10)
 - [x] Windows XP & Classic support
 - [x] Linux (Mono) support (due to a bug, the tab headers are still partially shown)
+
+## NavigationButton
+A round button with an arrow in it that either points backwards or forwards as you know it from the Windows Explorer. As it is drawn by the system via visual styles (`Navigation > BackButton / ForwardButton`), it adapts to the windows theme. I will add a custom render method to support other systems shortly. At the moment, this is the only control that does work on Windows Aero only.
+- [x] Windows Aero support (Vista, 7, 8, 10)
+- [x] Windows XP & Classic support (via custom drawing)
+- [x] Linux (Mono) support (via custom drawing)
