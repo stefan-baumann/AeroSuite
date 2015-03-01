@@ -21,7 +21,7 @@ namespace AeroSuite.Controls
     [DisplayName("Headerless TabControl")]
     [Description("A TabControl that does not have headers at run time.")]
     [ToolboxItem(true)]
-    [ToolboxBitmap(typeof(TabControl))]
+    [ToolboxBitmap(typeof(HeaderlessTabControl))]
     public class HeaderlessTabControl
         : TabControl
     {
