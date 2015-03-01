@@ -21,7 +21,7 @@ namespace AeroSuite.Controls
     [DisplayName("Bottom Panel")]
     [Description("A \"Bottom Panel\" that can be used for providing additional information or Buttons on the bottom of a Form/Dialog.")]
     [ToolboxItem(true)]
-    [ToolboxBitmap(typeof(Panel))]
+    [ToolboxBitmap(typeof(BottomPanel))]
     public class BottomPanel
         : Panel
     {

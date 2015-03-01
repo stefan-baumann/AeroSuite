@@ -59,7 +59,13 @@
     <Compile Include="Tests\TestDataProvider.cs" />
     <Compile Include="Tests\ITestControl.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\NavigationButton.bmp" />
+    <EmbeddedResource Include="Controls\Seperator.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\BottomPanel.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

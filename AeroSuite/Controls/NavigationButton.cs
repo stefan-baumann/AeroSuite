@@ -22,7 +22,7 @@ namespace AeroSuite.Controls
     [DisplayName("Navigation Button")]
     [Description("A simple Back/Forward Button drawn by Windows via Visual Styles if available.")]
     [ToolboxItem(true)]
-    [ToolboxBitmap(typeof(Button))]
+    [ToolboxBitmap(typeof(NavigationButton))]
     public class NavigationButton
         : Control
     {

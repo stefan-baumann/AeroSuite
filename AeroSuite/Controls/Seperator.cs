@@ -23,7 +23,7 @@ namespace AeroSuite.Controls
     [DefaultProperty("")]
     [Description("A seperator line drawn by Windows via Visual Styles if available.")]
     [ToolboxItem(true)]
-    //[ToolboxBitmap(typeof())] //Need to create a bitmap for this one
+    [ToolboxBitmap(typeof(Seperator))]
     public class Seperator
         : Control
     {

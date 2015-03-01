@@ -18,7 +18,7 @@ namespace AeroSuite.Controls
     [DisplayName("Cue TextBox")]
     [Description("A TextBox with cue banner support.")]
     [ToolboxItem(true)]
-    [ToolboxBitmap(typeof(TextBox))]
+    [ToolboxBitmap(typeof(ComboBox))]
     public class CueComboBox
         : ComboBox, ITestControl
     {
