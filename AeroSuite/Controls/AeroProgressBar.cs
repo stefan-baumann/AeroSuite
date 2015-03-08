@@ -35,6 +35,8 @@ namespace AeroSuite.Controls
         /// <value>
         /// The state.
         /// </value>
+        [Category("Appearance")]
+        [Description("The state of the progressbar. Typically indicated by the color of the bar (green, yellow, red)")]
         public ProgressBarState State
         {
             get
@@ -43,14 +45,29 @@ namespace AeroSuite.Controls
             }
             set
             {
-                if (value != ProgressBarState.Normal && !PlatformHelper.VistaOrHigher && !PlatformHelper.VisualStylesEnabled)
+                if (!PlatformHelper.VistaOrHigher && !PlatformHelper.VisualStylesEnabled)
                 {
-                    //This feature is not supported on other platforms.
-                    return;
+                    //This feature is not natively supported on other platforms.
+                    //As the bar color on Windows XP (classic theme) is indicated by the ForeColor property, we can try setting that property instead so we are able to recreate that effect on some systems at least.
+                    switch (value)
+                    {
+                        case ProgressBarState.Paused:
+                            this.ForeColor = Color.Gold;
+                            break;
+                        case ProgressBarState.Error:
+                            this.ForeColor = Color.Firebrick;
+                            break;
+                        default:
+                            this.ForeColor = SystemColors.Highlight;
+                            break;
+                    }
+                }
+                else
+                {
+                    this.UpdateState();
                 }
 
                 this.state = value;
-                this.UpdateState();
             }
         }
 
@@ -102,7 +119,7 @@ namespace AeroSuite.Controls
         /// </summary>
         protected void UpdateState()
         {
-            if (PlatformHelper.VistaOrHigher)
+            if (PlatformHelper.VistaOrHigher && PlatformHelper.VisualStylesEnabled)
             {
                 NativeMethods.SendMessage(this.Handle, PBM_SETSTATE, new IntPtr((int)this.state), IntPtr.Zero);
             }
