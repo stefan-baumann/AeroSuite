@@ -39,6 +39,8 @@ namespace AeroSuite.Controls
         public AeroLinkLabel()
             : base()
         {
+            this.AutoSize = true;
+
             if (PlatformHelper.VistaOrHigher && PlatformHelper.VisualStylesEnabled)
             {
                 this.LinkBehavior = LinkBehavior.HoverUnderline;
