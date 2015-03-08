@@ -138,26 +138,30 @@ namespace AeroSuite.Controls
 
             using (GraphicsPath gp = new GraphicsPath())
             {
-                gp.AddLines(new PointF[] { new PointF(this.Width * 0.5f, this.Height * 0.25f), new PointF(this.Width * 0.25f, this.Height * 0.5f), new PointF(this.Width * 0.5f, this.Height * 0.75f) });
+                var innerRect = new Rectangle(4, 4, this.Width - 8, this.Height - 8);
+                if (this.Type == NavigationButtonType.Back)
+                    gp.AddLines(new PointF[] { new PointF(innerRect.X + innerRect.Width * 0.5f, innerRect.Y + innerRect.Height * 0.25f), new PointF(innerRect.X + innerRect.Width * 0.25f, innerRect.Y + innerRect.Height * 0.5f), new PointF(innerRect.X + innerRect.Width * 0.5f, innerRect.Y + innerRect.Height * 0.75f) });
+                else
+                    gp.AddLines(new PointF[] { new PointF(innerRect.X + innerRect.Width * 0.5f, innerRect.Y + innerRect.Height * 0.25f), new PointF(innerRect.X + innerRect.Width * 0.75f, innerRect.Y + innerRect.Height * 0.5f), new PointF(innerRect.X + innerRect.Width * 0.5f, innerRect.Y + innerRect.Height * 0.75f) });
                 gp.StartFigure();
-                gp.AddLine(new PointF(this.Width * 0.25f, this.Height * 0.5f), new PointF(this.Width * 0.75f, this.Height * 0.5f));
+                gp.AddLine(new PointF(innerRect.X + innerRect.Width * 0.25f, innerRect.Y + innerRect.Height * 0.5f), new PointF(innerRect.X + innerRect.Width * 0.75f, innerRect.Y + innerRect.Height * 0.5f));
 
                 switch (this.state)
                 {
                     case PushButtonState.Normal:
-                        g.DrawEllipse(this.normalPen, new Rectangle(2, 2, this.Width - 4, this.Height - 4));
+                        g.DrawEllipse(this.normalPen, new Rectangle(5, 5, this.Width - 10, this.Height - 10));
                         g.DrawPath(this.normalPen, gp);
                         break;
                     case PushButtonState.Hot:
-                        g.FillEllipse(this.hoverBrush, new Rectangle(1, 1, this.Width - 2, this.Height - 2));
+                        g.FillEllipse(this.hoverBrush, new Rectangle(4, 4, this.Width - 8, this.Height - 8));
                         g.DrawPath(this.hoverArrowPen, gp);
                         break;
                     case PushButtonState.Pressed:
-                        g.FillEllipse(this.pressedBrush, new Rectangle(1, 1, this.Width - 2, this.Height - 2));
+                        g.FillEllipse(this.pressedBrush, new Rectangle(4, 4, this.Width - 8, this.Height - 8));
                         g.DrawPath(this.pressedArrowPen, gp);
                         break;
                     default:
-                        g.DrawEllipse(this.disabledPen, new Rectangle(2, 2, this.Width - 4, this.Height - 4));
+                        g.DrawEllipse(this.disabledPen, new Rectangle(5, 5, this.Width - 10, this.Height - 10));
                         g.DrawPath(this.disabledPen, gp);
                         break;
                 }
