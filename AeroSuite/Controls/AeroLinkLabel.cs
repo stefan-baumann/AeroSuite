@@ -94,7 +94,7 @@ namespace AeroSuite.Controls
         /// <summary>
         /// Processes the specified Windows Message.
         /// </summary>
-        /// <param name="msg">The Message to process.</param>
+        /// <param name="m">The Message to process.</param>
         protected override void WndProc(ref Message m)
         {
             //Set the cursor to the Hand Cursor specified by the current Windows Theme
