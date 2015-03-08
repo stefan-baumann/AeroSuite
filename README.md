@@ -14,7 +14,7 @@
 The following controls are currently available:
 - [AeroLinkLabel](#aerolinklabel)
 - [AeroListView](#aerolistview)
-- [AeroProgressBar](#aeroprogressbar)
+- [AeroProgressBar & VerticalAeroProgressBar](#aeroprogressbar)
 - [AeroTreeView](#aerotreeview)
 - [BottomPanel](#bottompanel)
 - [CueComboBox](#cuecombobox)
@@ -36,10 +36,10 @@ The AeroListView currently does exactly what the "normal" ListView does but it d
 - [x] Linux (Mono) support
 
 ## AeroProgressBar
-The AeroProgressBar is a progress bar with the ability to set a state: normal, paused or error. It also uses a feature of some operating systems (Windows Vista and higher) to make it go backwards smoothly. On non-windows systems there are no changes made. I'm not planning on providing this feature in the near future as there are many limitations to circumvent.
+The AeroProgressBar is a progress bar with the ability to set a state: normal, paused or error. It also uses a feature of some operating systems (Windows Vista and higher) to make it go backwards smoothly. On non-windows systems there are no changes made. I'm not planning on providing this feature in the near future as there are many limitations to circumvent.<br>The VerticalProgressBar is the same displayed vertically.
 - [x] Windows Aero support (Vista, 7, 8, 10)
-- [ ] Windows XP & Classic support (not natively supported by the os)
-- [ ] Linux (Mono)  (not natively supported by the os)
+- [x] Windows XP & Classic support (supported via workaround for Windows Clasic Theme)
+- [x] Linux (Mono) (supported via workaround)
 
 ## AeroTreeView
 Same as the AeroListView applied to a TreeView.
