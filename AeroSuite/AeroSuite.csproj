@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Controls\AeroLinkLabel.cs" />
     <Compile Include="Controls\AeroListView.cs" />
+    <Compile Include="Controls\AeroProgressBar.cs" />
     <Compile Include="Controls\AeroTreeView.cs" />
     <Compile Include="Controls\BottomPanel.cs" />
     <Compile Include="Controls\CueComboBox.cs" />
