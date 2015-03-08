@@ -35,7 +35,7 @@ namespace AeroSuite.Controls
         public ShieldButton()
             : base()
         {
-            this.Size = new Size((int)(this.Width * 1.5), this.Height);
+            this.Size = new Size((int)(this.Width * 1.5), this.Height + 1);
             if (PlatformHelper.VistaOrHigher)
             {
                 //Only try to load the icon if it did not fail before

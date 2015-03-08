@@ -65,6 +65,11 @@ namespace AeroSuite.Test
                 (this.currentControl as ITestControl).PrepareForTests();
             }
 
+            if (typeof (Button).IsAssignableFrom(type))
+            {
+                (this.currentControl as Button).UseVisualStyleBackColor = true;
+            }
+
 
             this.ControlPropertyGrid.SelectedObject = this.currentControl;
         }
