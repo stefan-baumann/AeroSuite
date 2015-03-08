@@ -52,10 +52,12 @@
     <Compile Include="Controls\CueComboBox.cs" />
     <Compile Include="Controls\CueTextBox.cs" />
     <Compile Include="Controls\HeaderlessTabControl.cs" />
-    <Compile Include="Controls\InstructionLabel.cs" />
+    <Compile Include="Controls\CaptionLabel.cs" />
     <Compile Include="Controls\NavigationButton.cs" />
     <Compile Include="Controls\Seperator.cs" />
+    <Compile Include="Controls\ShieldButton.cs" />
     <Compile Include="Controls\VerticalAeroProgressBar.cs" />
+    <Compile Include="ImageExtractor.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="PlatformHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +76,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\VerticalAeroProgressBar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\ShieldButton.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
