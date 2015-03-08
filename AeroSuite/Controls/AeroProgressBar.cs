@@ -44,6 +44,7 @@ namespace AeroSuite.Controls
             }
             set
             {
+                this.state = value;
                 if (!PlatformHelper.VistaOrHigher && !PlatformHelper.VisualStylesEnabled)
                 {
                     //This feature is not natively supported on other platforms.
@@ -65,8 +66,6 @@ namespace AeroSuite.Controls
                 {
                     this.UpdateState();
                 }
-
-                this.state = value;
             }
         }
 
