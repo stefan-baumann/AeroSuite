@@ -72,7 +72,7 @@
     <EmbeddedResource Include="Controls\HeaderlessTabControl.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Controls\VerticalAeroProgressBar.bmp" />
+    <EmbeddedResource Include="Controls\VerticalAeroProgressBar.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
