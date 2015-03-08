@@ -52,6 +52,7 @@
     <Compile Include="Controls\CueComboBox.cs" />
     <Compile Include="Controls\CueTextBox.cs" />
     <Compile Include="Controls\HeaderlessTabControl.cs" />
+    <Compile Include="Controls\InstructionLabel.cs" />
     <Compile Include="Controls\NavigationButton.cs" />
     <Compile Include="Controls\Seperator.cs" />
     <Compile Include="Controls\VerticalAeroProgressBar.cs" />
