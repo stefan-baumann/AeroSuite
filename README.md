@@ -1,6 +1,6 @@
 ![AeroSuite Logo](http://www.vb-paradise.de/index.php/Attachment/32001-AeroSuite-Logo-png/)
 <p>AeroSuite is a WinForms Control Library that provides extended functionality for pre-existing controls and also new controls. Unlike most (if not all) similar libraries, this library is aimed at supporting every platform: Windows XP to 10 and Linux with Mono are supported.</p>
-<p>Every control is drawn natively by the system. If this is not supported by the operating system, it will automatically fall back to a custom-drawn version. That allows the seamless use on every platform.</p>
+<p>Every control is drawn natively by the system. If this is not supported by the operating system, it will either automatically fall back to a custom-drawn version or simply not provide the feature (only if it is not essential for the user experience). That allows the use on every platform. In the far future, I'm also planning on creating a workaroung for every added feature to improve the user experience even more.</p>
 <p>There are not many controls in the library right now as it is still in a early stage of development. About 20 more controls are already implemented and just waiting to be revised and released.</p>
 <p>Although this library is released under the MIT license that allows you to do almost anything with it I'd like to be mentioned in your about-dialog/credits/whatever as the creator of this library.</p>
 
@@ -14,6 +14,7 @@
 The following controls are currently available:
 - [AeroLinkLabel](#aerolinklabel)
 - [AeroListView](#aerolistview)
+- [AeroProgressBar](#aeroprogressbar)
 - [AeroTreeView](#aerotreeview)
 - [BottomPanel](#bottompanel)
 - [CueComboBox](#cuecombobox)
@@ -29,10 +30,16 @@ The AeroLinkLabel is a link label with improved styling: The colors are either e
 - [x] Linux (Mono) support
 
 ## AeroListView
-The AeroListView currently does exactly what the "normal" ListView does but it does that in a far more stylish way as it is styled according to the current (Windows) theme.
+The AeroListView currently does exactly what the "normal" ListView does but it does that in a far more stylish way as it is styled according to the current (Windows) theme. On non-windows systems there are no changes made.
 - [x] Windows Aero support (Vista, 7, 8, 10)
 - [x] Windows XP & Classic support
 - [x] Linux (Mono) support
+
+## AeroProgressBar
+The AeroProgressBar is a progress bar with the ability to set a state: normal, paused or error. It also uses a feature of some operating systems (Windows Vista and higher) to make it go backwards smoothly. On non-windows systems there are no changes made. I'm not planning on providing this feature in the near future as there are many limitations to circumvent.
+- [x] Windows Aero support (Vista, 7, 8, 10)
+- [ ] Windows XP & Classic support (not natively supported by the os)
+- [ ] Linux (Mono)  (not natively supported by the os)
 
 ## AeroTreeView
 Same as the AeroListView applied to a TreeView.
