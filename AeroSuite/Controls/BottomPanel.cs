@@ -68,7 +68,7 @@ namespace AeroSuite.Controls
         }
 
         /// <summary>
-        /// Paints the button with visual styles.
+        /// Paints the panel with visual styles.
         /// </summary>
         /// <param name="g">The targeted graphics.</param>
         protected virtual void PaintWithVisualStyles(Graphics g)
@@ -77,7 +77,7 @@ namespace AeroSuite.Controls
         }
 
         /// <summary>
-        /// Paints the button manually.
+        /// Paints the panel manually.
         /// </summary>
         /// <param name="g">The targeted graphics.</param>
         protected virtual void PaintManually(Graphics g)
