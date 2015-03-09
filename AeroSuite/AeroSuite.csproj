@@ -49,6 +49,7 @@
     <Compile Include="Controls\AeroProgressBar.cs" />
     <Compile Include="Controls\AeroTreeView.cs" />
     <Compile Include="Controls\BottomPanel.cs" />
+    <Compile Include="Controls\CommandLink.cs" />
     <Compile Include="Controls\CueComboBox.cs" />
     <Compile Include="Controls\CueTextBox.cs" />
     <Compile Include="Controls\HeaderlessTabControl.cs" />
@@ -79,6 +80,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\ShieldButton.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\CommandLink.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

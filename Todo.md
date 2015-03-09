@@ -6,7 +6,7 @@
 		- [ ] ExpandButton & ExpandPanel (maybe usable with BottomPanel)
 		- [ ] SplitButton
 		- [ ] DropDownButton
-		- [ ] CommandLink
+		- [x] CommandLink
 		- [ ] Extended Form with possible Usage on Windows XP and Linux:
 			- [ ] Make it use the default Windows Font and Window Background
 			- [ ] Glass (maybe with the managed Margins class as the property type)

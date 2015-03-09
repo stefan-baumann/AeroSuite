@@ -19,6 +19,7 @@ The following controls are currently available:
 - [AeroTreeView](#aerotreeview)
 - [BottomPanel](#bottompanel)
 - [CaptionLabel](#captionlabel)
+- [CommandLink](#commandlink)
 - [CueComboBox](#cuecombobox)
 - [CueTextBox](#cuetextbox)
 - [HeaderlessTabControl](#headerlesstabcontrol)
@@ -61,6 +62,12 @@ A Label with big blue text that is used as an caption, header or important instr
 - [x] Windows Aero support (Vista, 7, 8, 10)
 - [x] Windows XP & Classic support
 - [x] Linux (Mono) support
+
+## CommandLink
+A CommandLink button. That's all there is to know about it.
+- [x] Windows Aero support (Vista, 7, 8, 10)
+- [x] Windows XP & Classic support (displayed as a normal button)
+- [x] Linux (Mono) support (displayed as a normal button)
 
 ## CueComboBox
 A ComboBox with cue banner support. That means that when there is no item selected, a text will be shown as a placeholder ("cue banner"). You can change the text with the `Cue` property.
