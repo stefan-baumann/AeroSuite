@@ -1,0 +1,66 @@
+﻿# Todo List
+- [ ] Controls
+	- [ ] Additional Features & Controls
+		- [ ] DoubleNavigationButton
+		- [ ] ExpandButton & ExpandPanel (maybe usable with BottomPanel)
+		- [ ] SplitButton
+		- [ ] DropDownButton
+		- [ ] CommandLink
+		- [ ] Extended Form with possible Usage on Windows XP and Linux:
+			- [ ] Make it use the default Windows Font and Window Background
+			- [ ] Glass (maybe with the managed Margins class as the property type)
+				- [ ] Method that makes Controls not look bad
+				- Maybe we can look at Microsoft's implementation at Microsoft.WindowsAPICodePack.Shell.GlassForm
+			- [ ] Client-Area & NonClient-Area resizing
+			- [ ] NonClient-Area Painting
+		- [ ] Extended NotifyIcon for NotifyIcon-based Applications (especially way to get the location for showing forms like the sound mixer in Windows)
+			- [ ] Also add a custom Form for that purpose (with the Flyout LinkArea Panel (maybe with AeroLinkLabel auto support) as a footer)
+			- Maybe we could do some nice Visual Studio-Designer-Integration (for example use the Form Designer for the custom Form and let it automatically add the NotifyIcon)
+		- [ ] TextBox with embedded Controls (Buttons)
+		- [ ] Combination of TreeView and ListView -> Multi-Column-Treeview
+		- [ ] Extended TabControl
+			- [ ] Tab Dragging
+			- [ ] Controls embedded in the Tab Headers (-> Close Button?)
+			- [ ] Custom ContextMenues for the Tab Headers
+			- [ ] Multiline Tabs (possible by sending a message - no problem here)
+			- [ ] Maybe a new Tab-tab or something similar ^^
+		- [ ] Hotkey TextBox
+		- [ ] Rating Control
+		- [ ] Font ComboBox
+		- [ ] Color ComboBox
+		- [ ] Color Picker
+		- [ ] Double Slider/Range TrackBar
+		- [ ] Nice-looking SplitPanel
+		- [ ] Taskbar Icon Progress Wrapper & Button Flasher
+		- [ ] Hotkey Wrapper
+		- [ ] Advanced User-Input Validation
+		- [ ] Breadcrumb-like Control
+		- [ ] Shell Drag & Drop (have a look at this: http://blogs.msdn.com/b/adamroot/archive/2008/02/19/shell-style-drag-and-drop-in-net-wpf-and-winforms.aspx - much complicated COM stuff though)
+		- [ ] Info-Panel (like in the Windows 7 File Explorer)
+		- [ ] Wizard
+		- [ ] Quad-State CheckBox (Unchecked, Checked, Mixed, Excluded)
+		- [ ] Clock
+		- [ ] Nicely styled ToolStrip renderer (maybe fix some MainMenu & ContextMenu layout bugs & missing features instead)
+			- Maybe have a look at http://wyday.com/blog/2009/making-the-menus-in-your-net-app-look-professional/
+		- [ ] ListBox drawn with Visual Styles
+		- [ ] ListBox with embedded Controls instead of List Items
+		- [ ] Some additional Controls for ToolStrips (with the ToolStripControlHost):
+			- [ ] ComboBox
+			- [ ] TextBox
+		- [ ] ComboBox with custom embedded DropDown-Control (for example a ColorPicker)
+		- [ ] The new FolderBrowserDialog that looks more like the OpenFileDialog -> Support for CommonFileDialogs
+		- [ ] Support for something like the StockIcon-functionality in the WindowsAPICodePack (Microsoft.WindowsAPICodePack.Shell.StockIcon)
+			- Maybe I have been using a similar method in my ImageExtractor class but I'm not sure as I have not looked into it yet
+	- [ ] Add additional features to already implemented Controls
+		- [ ] ListView
+			- [ ] Collapsable Groups
+			- [ ] Group Sorting
+			- [ ] Nice Column Reordering
+			- [ ] Item Reordering
+			- [ ] Custom Item Edit (via ComboBox for example)
+			- [ ] Embedded Controls
+		- [ ] Add Action Lists
+			- [ ] AeroProgressBar & VerticalAeroProgressBar: State
+			- [ ] NavigationButton: Type
+			- [ ] CueTextBox: Cue
+			- [ ] CueComboBox: Cue, DropDownStyle
