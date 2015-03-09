@@ -18,11 +18,13 @@ The following controls are currently available:
 - [AeroProgressBar & VerticalAeroProgressBar](#aeroprogressbar)
 - [AeroTreeView](#aerotreeview)
 - [BottomPanel](#bottompanel)
+- [CaptionLabel](#captionlabel)
 - [CueComboBox](#cuecombobox)
 - [CueTextBox](#cuetextbox)
 - [HeaderlessTabControl](#headerlesstabcontrol)
 - [NavigationButton](#navigationbutton)
 - [Seperator](#seperator)
+- [ShieldButton](#shieldbutton)
 
 ## AeroLinkLabel
 The AeroLinkLabel is a link label with improved styling: The colors are either extracted from the system's visual styles (`TextStyle > HyperLinkText`) or taken from the SystemColors-class. It also fixes Microsoft's fault with the hand cursor by using the system's hand cursor.
@@ -50,6 +52,12 @@ Same as the AeroListView applied to a TreeView.
 
 ## BottomPanel
 A Panel that you can put - as the name suggests - on the bottom of a form for seperating some controls from the others on the form. When using Windows Vista or higher, it is drawn by the system via visual styles (`TaskDialog > SecondaryPanel`). Alternatively it uses the system colors to manually draw the panel.
+- [x] Windows Aero support (Vista, 7, 8, 10)
+- [x] Windows XP & Classic support
+- [x] Linux (Mono) support
+
+## CaptionLabel
+A Label with big blue text that is used as an caption, header or important instruction. The colors are either extracted from the system's visual styles (`TextStyle > MainInstruction`) or taken from the SystemColors class.
 - [x] Windows Aero support (Vista, 7, 8, 10)
 - [x] Windows XP & Classic support
 - [x] Linux (Mono) support
@@ -86,3 +94,9 @@ A simple horizontal seperator line. As it is drawn by the system via visual styl
 - [x] Windows Aero support (Vista, 7, 8, 10)
 - [x] Windows XP & Classic support (via custom drawing)
 - [x] Linux (Mono) support (via custom drawing)
+
+## ShieldButton
+A button with a shield icon. On Windows Vista or higher, the UAC shield icon is shown in the system's default small icon size. Showing it on other systems would not make sense as UAC is a Windows-only thing.
+- [x] Windows Aero support (Vista, 7, 8, 10)
+- [x] Windows XP & Classic support
+- [x] Linux (Mono) support
