@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
-using AeroSuite.IconExtractor;
 
 namespace AeroSuite.Controls
 {
@@ -43,7 +42,7 @@ namespace AeroSuite.Controls
                 {
                     try
                     {
-                        var icon = IconExtractor.LoadIcon(IconType.Shield, SystemInformation.SmallIconSize);
+                        var icon = IconExtractor.LoadIcon(IconExtractor.IconType.Shield, SystemInformation.SmallIconSize);
                         if (icon != null)
                         {
                             this.Image = icon.ToBitmap();
@@ -52,6 +51,10 @@ namespace AeroSuite.Controls
 
                             isSystemAbleToLoadShield = true;
                             return;
+                        }
+                        else
+                        {
+                            isSystemAbleToLoadShield = false;
                         }
                     }
                     catch (PlatformNotSupportedException)
@@ -65,6 +68,47 @@ namespace AeroSuite.Controls
                 //Preferred way not possible
                 this.FlatStyle = FlatStyle.System;
                 NativeMethods.SendMessage(this.Handle, BCM_SETSHIELD, IntPtr.Zero, new IntPtr(1));
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the flat style appearance of the shield button control.
+        /// </summary>
+        /// <value>
+        /// The flat style.
+        /// </value>
+        public new FlatStyle FlatStyle
+        {
+            get
+            {
+                return base.FlatStyle;
+            }
+            set
+            {
+                if (value != base.FlatStyle)
+                {
+                    base.FlatStyle = value;
+
+                    //Update the shield icon if needed
+                    if (PlatformHelper.VistaOrHigher)
+                    {
+                        if (base.FlatStyle == FlatStyle.System)
+                        {
+                            //Apply Shield the WinAPI-Way
+                            NativeMethods.SendMessage(this.Handle, BCM_SETSHIELD, IntPtr.Zero, new IntPtr(1));
+                        }
+                        else
+                        {
+                            //Try applying it the other way
+                            if (isSystemAbleToLoadShield.Value)
+                            {
+                                this.Image = IconExtractor.LoadIcon(IconExtractor.IconType.Shield, SystemInformation.SmallIconSize).ToBitmap();
+                                this.TextImageRelation = TextImageRelation.ImageBeforeText;
+                                this.ImageAlign = ContentAlignment.MiddleRight;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
