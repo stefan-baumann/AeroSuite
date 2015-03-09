@@ -134,7 +134,7 @@ namespace AeroSuite.Controls
             get
             {
                 var param = base.CreateParams;
-                if (PlatformHelper.VistaOrHigher) param.Style |= PBS_SMOOTHREVERSE; //PBS_VERTICAL for a vertical ProgressBar; Create Properties for both styles
+                if (PlatformHelper.VistaOrHigher) param.Style |= PBS_SMOOTHREVERSE;
                 return param;
             }
         }

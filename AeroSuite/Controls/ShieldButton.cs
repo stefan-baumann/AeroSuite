@@ -66,7 +66,7 @@ namespace AeroSuite.Controls
                 }
                 
                 //Preferred way not possible
-                this.FlatStyle = FlatStyle.System;
+                base.FlatStyle = FlatStyle.System; //Need to access the base property as the overriden one would cause some overhead
                 NativeMethods.SendMessage(this.Handle, BCM_SETSHIELD, IntPtr.Zero, new IntPtr(1));
             }
         }
@@ -77,6 +77,8 @@ namespace AeroSuite.Controls
         /// <value>
         /// The flat style.
         /// </value>
+        [Category("Appearance")]
+        [Description("The flat style appearance of the shield button control.")]
         public new FlatStyle FlatStyle
         {
             get

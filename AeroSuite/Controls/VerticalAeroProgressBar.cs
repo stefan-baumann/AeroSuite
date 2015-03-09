@@ -24,6 +24,9 @@ namespace AeroSuite.Controls
     {
         private const int PBS_VERTICAL = 0x4;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VerticalAeroProgressBar"/> class.
+        /// </summary>
         public VerticalAeroProgressBar()
             : base()
         {
