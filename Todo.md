@@ -1,4 +1,5 @@
-﻿# Todo List
+# Todo List
+<p>There are a lot of things to do and I wanted to write some of them down just so I don't forget them and so you can see what is planned for the future.</p>
 - [ ] Controls
 	- [ ] Additional Features & Controls
 		- [ ] DoubleNavigationButton
@@ -64,3 +65,8 @@
 			- [ ] NavigationButton: Type
 			- [ ] CueTextBox: Cue
 			- [ ] CueComboBox: Cue, DropDownStyle
+	- [ ] Support additional platforms for already implemented Controls
+		- [ ] AeroProgressBar (XP non-classic): States
+		- [ ] CueComboBox (XP & Linux): Cue
+		- [ ] CueTextBox (Linux): Cue
+		- [ ] HeaderlessTabControl (Linux): Tab headers are still partially visible
