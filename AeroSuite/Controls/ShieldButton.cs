@@ -48,6 +48,7 @@ namespace AeroSuite.Controls
                         {
                             this.Image = icon.ToBitmap();
                             this.TextImageRelation = TextImageRelation.ImageBeforeText;
+                            this.ImageAlign = ContentAlignment.MiddleRight;
 
                             isSystemAbleToLoadShield = true;
                             return;
