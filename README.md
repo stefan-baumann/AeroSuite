@@ -9,6 +9,7 @@
 - More cross-platform compatibility/support
 - Add screenshots from different platforms to the control documentation
 - Provide class diagrams for the important things
+There is a more specific Todo list available over here: [Todo List](Todo.md)
 
 # Controls
 The following controls are currently available:
