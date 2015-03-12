@@ -72,6 +72,93 @@ namespace AeroSuite.Controls
 
 
         /// <summary>
+        /// Gets or sets the color used to display links in normal cases.
+        /// </summary>
+        /// <value>
+        /// The color used to display links in normal cases.
+        /// </value>
+        /// <remarks>
+        /// This property had to be overriden to prevent the designer creating code for it and so disabling the automatic style adaption.
+        /// </remarks>
+        [Category("Appearance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public new Color LinkColor
+        {
+            get { return base.LinkColor; }
+            set { base.LinkColor = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the color used to display active links.
+        /// </summary>
+        /// <value>
+        /// The color used to display active links.
+        /// </value>
+        /// <remarks>
+        /// This property had to be overriden to prevent the designer creating code for it and so disabling the automatic style adaption.
+        /// </remarks>
+        [Category("Appearance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public new Color ActiveLinkColor
+        {
+            get { return base.ActiveLinkColor; }
+            set { base.ActiveLinkColor = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the color used to display disabled links.
+        /// </summary>
+        /// <value>
+        /// The color used to display disabled links.
+        /// </value>
+        /// <remarks>
+        /// This property had to be overriden to prevent the designer creating code for it and so disabling the automatic style adaption.
+        /// </remarks>
+        [Category("Appearance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public new Color DisabledLinkColor
+        {
+            get { return base.DisabledLinkColor; }
+            set { base.DisabledLinkColor = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the color used to display the link once it has been visited.
+        /// </summary>
+        /// <value>
+        /// The color used to display the link once it has been visited..
+        /// </value>
+        /// <remarks>
+        /// This property had to be overriden to prevent the designer creating code for it and so disabling the automatic style adaption.
+        /// </remarks>
+        [Category("Appearance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public new Color VisitedLinkColor
+        {
+            get { return base.VisitedLinkColor; }
+            set { base.VisitedLinkColor = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets a value that represents how the link will be underlined.
+        /// </summary>
+        /// <value>
+        /// A value that represents how the link will be underlined.
+        /// </value>
+        /// <remarks>
+        /// This property had to be overriden to prevent the designer creating code for it and so disabling the automatic style adaption.
+        /// </remarks>
+        [Category("Appearance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public new LinkBehavior LinkBehavior
+        {
+            get { return base.LinkBehavior; }
+            set { base.LinkBehavior = value; }
+        }
+
+
+
+        /// <summary>
         /// Raises the <see cref="E:MouseDown" /> event.
         /// </summary>
         /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>

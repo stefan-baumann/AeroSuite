@@ -47,6 +47,42 @@ namespace AeroSuite.Controls
 
 
         /// <summary>
+        /// The value of the HotTracking property. The HotTracking property determines if nodes are highlighted as the mousepointer passes over them.
+        /// </summary>
+        /// <value>
+        /// A value that determines if nodes are highlighted as the mousepointer passes over them.
+        /// </value>
+        /// <remarks>
+        /// This property had to be overriden to prevent the designer creating code for it and so disabling the automatic style adaption.
+        /// </remarks>
+        [Category("Behaviour")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public new bool HotTracking
+        {
+            get { return base.HotTracking; }
+            set { base.HotTracking = value; }
+        }
+
+        /// <summary>
+        /// The ShowLines property determines if lines are drawn between nodes in the tree view.
+        /// </summary>
+        /// <value>
+        /// A value that determines if lines are drawn between nodes in the tree view.
+        /// </value>
+        /// <remarks>
+        /// This property had to be overriden to prevent the designer creating code for it and so disabling the automatic style adaption.
+        /// </remarks>
+        [Category("Behaviour")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public new bool ShowLines
+        {
+            get { return base.ShowLines; }
+            set { base.ShowLines = value; }
+        }
+
+
+
+        /// <summary>
         /// Raises the <see cref="E:HandleCreated" /> event.
         /// </summary>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>

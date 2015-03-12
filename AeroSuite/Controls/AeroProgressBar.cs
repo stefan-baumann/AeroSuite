@@ -113,6 +113,23 @@ namespace AeroSuite.Controls
         }
 
         /// <summary>
+        /// The foreground color of the progress bar. Represents the bar color on Windows XP with classic theming and Linux.
+        /// </summary>
+        /// <value>
+        /// The foreground color of the progress bar.
+        /// </value>
+        /// <remarks>
+        /// This property had to be overriden to prevent the designer creating code for it and so disabling the automatic style adaption.
+        /// </remarks>
+        [Category("Appearance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public new Color ForeColor
+        {
+            get { return base.ForeColor; }
+            set { base.ForeColor = value; }
+        }
+
+        /// <summary>
         /// Updates the state.
         /// </summary>
         protected void UpdateState()

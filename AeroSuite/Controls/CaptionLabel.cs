@@ -36,5 +36,39 @@ namespace AeroSuite.Controls
             else
                 this.ForeColor = SystemColors.Highlight;
         }
+
+        /// <summary>
+        /// The foreground color of the control.
+        /// </summary>
+        /// <value>
+        /// The foreground color of the control.
+        /// </value>
+        /// <remarks>
+        /// This property had to be overriden to prevent the designer creating code for it and so disabling the automatic style adaption.
+        /// </remarks>
+        [Category("Appearance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public new Color ForeColor
+        {
+            get { return base.ForeColor; }
+            set { base.ForeColor = value; }
+        }
+
+        /// <summary>
+        /// Retrieves the current font for this control. This will be the font used by default for painting and text in the control.
+        /// </summary>
+        /// <value>
+        /// The current font for this control.
+        /// </value>
+        /// <remarks>
+        /// This property had to be overriden to prevent the designer creating code for it and so disabling the automatic style adaption.
+        /// </remarks>
+        [Category("Appearance")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public new Font Font
+        {
+            get { return base.Font; }
+            set { base.Font = value; }
+        }
     }
 }
