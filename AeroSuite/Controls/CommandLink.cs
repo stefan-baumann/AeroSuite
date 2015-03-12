@@ -76,7 +76,10 @@ namespace AeroSuite.Controls
             set
             {
                 this.note = value;
-                NativeMethods.SendMessage(this.Handle, BCM_SETNOTE, IntPtr.Zero, this.note);
+                if (PlatformHelper.VistaOrHigher)
+                {
+                    NativeMethods.SendMessage(this.Handle, BCM_SETNOTE, IntPtr.Zero, this.note);
+                }
             }
         }
 
