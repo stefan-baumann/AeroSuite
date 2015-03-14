@@ -20,7 +20,7 @@ namespace AeroSuite.Controls
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(TextBox))]
     public class CueTextBox
-        : TextBox, ITestControl
+        : TextBox
     {
         private const int EM_SETCUEBANNER = 0x1501;
 
@@ -103,17 +103,6 @@ namespace AeroSuite.Controls
             base.OnHandleCreated(e);
 
             this.UpdateCue();
-        }
-
-
-
-        /// <summary>
-        /// Prepares the control for tests (setting properties etc.).
-        /// </summary>
-        void ITestControl.PrepareForTests()
-        {
-            this.Text = string.Empty;
-            this.Cue = "Search...";
         }
     }
 }

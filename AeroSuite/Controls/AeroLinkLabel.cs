@@ -27,11 +27,11 @@ namespace AeroSuite.Controls
         private const int WM_SETCURSOR = 0x20;
         private const int IDC_HAND = 32649;
 
-        protected Color defaultColor;
-        protected Color activeColor;
-        protected Color pressedColor;
-        protected Color visitedColor;
-        protected Color disabledColor;
+        protected Color DefaultColor;
+        protected Color ActiveColor;
+        protected Color PressedColor;
+        protected Color VisitedColor;
+        protected Color DisabledColor;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AeroLinkLabel"/> class.
@@ -46,27 +46,27 @@ namespace AeroSuite.Controls
                 this.LinkBehavior = LinkBehavior.HoverUnderline;
 
                 //Extract colors from visual styles
-                this.defaultColor = new VisualStyleRenderer("TextStyle", 6, 1).GetColor(ColorProperty.TextColor);
-                this.activeColor = new VisualStyleRenderer("TextStyle", 6, 2).GetColor(ColorProperty.TextColor);
-                this.pressedColor = new VisualStyleRenderer("TextStyle", 6, 3).GetColor(ColorProperty.TextColor);
-                this.visitedColor = new VisualStyleRenderer("TextStyle", 6, 0).GetColor(ColorProperty.TextColor);
-                this.disabledColor = new VisualStyleRenderer("TextStyle", 6, 4).GetColor(ColorProperty.TextColor);
+                this.DefaultColor = new VisualStyleRenderer("TextStyle", 6, 1).GetColor(ColorProperty.TextColor);
+                this.ActiveColor = new VisualStyleRenderer("TextStyle", 6, 2).GetColor(ColorProperty.TextColor);
+                this.PressedColor = new VisualStyleRenderer("TextStyle", 6, 3).GetColor(ColorProperty.TextColor);
+                this.VisitedColor = new VisualStyleRenderer("TextStyle", 6, 0).GetColor(ColorProperty.TextColor);
+                this.DisabledColor = new VisualStyleRenderer("TextStyle", 6, 4).GetColor(ColorProperty.TextColor);
             }
             else
             {
                 //Extract colors from system colors
-                this.defaultColor = SystemColors.HotTrack;
-                this.activeColor = SystemColors.Highlight;
-                this.pressedColor = SystemColors.Highlight;
-                this.visitedColor = this.VisitedLinkColor; //Don't know how to get this property so I use the default one.
-                this.disabledColor = SystemColors.GrayText;
+                this.DefaultColor = SystemColors.HotTrack;
+                this.ActiveColor = SystemColors.Highlight;
+                this.PressedColor = SystemColors.Highlight;
+                this.VisitedColor = this.VisitedLinkColor; //Don't know how to get this property so I use the default one.
+                this.DisabledColor = SystemColors.GrayText;
             }
 
             //Apply the extracted colors
-            this.LinkColor = this.defaultColor;
-            this.ActiveLinkColor = this.activeColor;
-            this.VisitedLinkColor = this.visitedColor;
-            this.DisabledLinkColor = this.disabledColor;
+            this.LinkColor = this.DefaultColor;
+            this.ActiveLinkColor = this.ActiveColor;
+            this.VisitedLinkColor = this.VisitedColor;
+            this.DisabledLinkColor = this.DisabledColor;
         }
 
 
@@ -164,7 +164,7 @@ namespace AeroSuite.Controls
         /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
         protected override void OnMouseDown(MouseEventArgs e)
         {
-            this.ActiveLinkColor = this.pressedColor;
+            this.ActiveLinkColor = this.PressedColor;
 
             base.OnMouseDown(e);
         }
@@ -175,7 +175,7 @@ namespace AeroSuite.Controls
         /// <param name="e">The <see cref="MouseEventArgs"/> instance containing the event data.</param>
         protected override void OnMouseUp(MouseEventArgs e)
         {
-            this.ActiveLinkColor = this.activeColor;
+            this.ActiveLinkColor = this.ActiveColor;
 
             base.OnMouseUp(e);
         }

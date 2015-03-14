@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
+using AeroSuite.Test.TestAdapters;
 
 namespace AeroSuite.Test
 {
@@ -26,27 +27,6 @@ namespace AeroSuite.Test
             this.TypeComboBox.DataSource = controls.ToList();
             this.TypeComboBox.DisplayMember = "Name";
             this.TypeComboBox.SelectedIndex = 0;
-
-            //Load stuff for TestDataProvider
-            try
-            {
-                TestDataProvider.SmallImageList = new ImageList() { ColorDepth = ColorDepth.Depth32Bit, ImageSize = new Size(16, 16) };
-                TestDataProvider.SmallImageList.Images.Add(new Icon(Properties.Resources.All_Users_Folder, new Size(16, 16)).ToBitmap());
-                TestDataProvider.SmallImageList.Images.Add(new Icon(Properties.Resources.Pictures, new Size(16, 16)).ToBitmap());
-                TestDataProvider.SmallImageList.Images.Add(new Icon(Properties.Resources.Recycle_Bin, new Size(16, 16)).ToBitmap());
-                TestDataProvider.SmallImageList.Images.Add(new Icon(Properties.Resources.UAC, new Size(16, 16)).ToBitmap());
-                TestDataProvider.SmallImageList.Images.Add(new Icon(Properties.Resources.Videos, new Size(16, 16)).ToBitmap());
-                TestDataProvider.LargeImageList = new ImageList() { ColorDepth = ColorDepth.Depth32Bit, ImageSize = new Size(48, 48) };
-                TestDataProvider.LargeImageList.Images.Add(new Icon(Properties.Resources.All_Users_Folder, new Size(48, 48)).ToBitmap());
-                TestDataProvider.LargeImageList.Images.Add(new Icon(Properties.Resources.Pictures, new Size(48, 48)).ToBitmap());
-                TestDataProvider.LargeImageList.Images.Add(new Icon(Properties.Resources.Recycle_Bin, new Size(48, 48)).ToBitmap());
-                TestDataProvider.LargeImageList.Images.Add(new Icon(Properties.Resources.UAC, new Size(48, 48)).ToBitmap());
-                TestDataProvider.LargeImageList.Images.Add(new Icon(Properties.Resources.Videos, new Size(48, 48)).ToBitmap());
-            }
-            catch (System.Reflection.TargetInvocationException)
-            {
-                //Throws an exception on Linux (don't know why yet)
-            }
         }
 
         private Control currentControl;
@@ -60,11 +40,10 @@ namespace AeroSuite.Test
             this.currentControl.SizeChanged += (s, ea) => this.currentControl.Location = new Point((this.splitContainer1.Panel1.Width - this.currentControl.Width) / 2, (this.splitContainer1.Panel1.Height - this.currentControl.Height) / 2);
             this.currentControl.Location = new Point((this.splitContainer1.Panel1.Width - this.currentControl.Width) / 2, (this.splitContainer1.Panel1.Height - this.currentControl.Height) / 2);
 
-            if (typeof(ITestControl).IsAssignableFrom(type))
-            {
-                (this.currentControl as ITestControl).PrepareForTests();
-            }
+            //Set up the control for testing - the test adapter is not used any further at the moment.
+            var testAdapter = TestAdapters.TestAdapters.Item(this.currentControl);
 
+            //To fix the issue with the button getting a white background color assigned randomly when being created.
             if (typeof (Button).IsAssignableFrom(type))
             {
                 (this.currentControl as Button).UseVisualStyleBackColor = true;

@@ -20,7 +20,7 @@ namespace AeroSuite.Controls
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(ComboBox))]
     public class CueComboBox
-        : ComboBox, ITestControl
+        : ComboBox
     {
         private const int CB_SETCUEBANNER = 0x1703;
 
@@ -75,18 +75,6 @@ namespace AeroSuite.Controls
         {
             base.OnHandleCreated(e);
             this.UpdateCue();
-        }
-
-
-
-        /// <summary>
-        /// Prepares the control for tests (setting properties etc.).
-        /// </summary>
-        void ITestControl.PrepareForTests()
-        {
-            this.Text = string.Empty;
-            this.Cue = "No item selected.";
-            this.Items.AddRange(new string[] { "First Item", "Second Item", "Third Item", "Fourth Item", "Fifth Item" });
         }
     }
 }

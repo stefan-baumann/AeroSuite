@@ -21,7 +21,7 @@ namespace AeroSuite.Controls
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(ListView))]
     public class AeroListView
-        : ListView, ITestControl
+        : ListView
     {
         private const int LVS_EX_DOUBLEBUFFER = 0x10000;
         private const int LVM_SETEXTENDEDLISTVIEWSTYLE = 4150;
@@ -50,19 +50,6 @@ namespace AeroSuite.Controls
                 NativeMethods.SetWindowTheme(this.Handle, "explorer", null);
                 NativeMethods.SendMessage(this.Handle, LVM_SETEXTENDEDLISTVIEWSTYLE, new IntPtr(LVS_EX_DOUBLEBUFFER), new IntPtr(LVS_EX_DOUBLEBUFFER));
             }
-        }
-
-
-
-        /// <summary>
-        /// Prepares the control for tests (setting properties etc.).
-        /// </summary>
-        void ITestControl.PrepareForTests()
-        {
-            this.SmallImageList = TestDataProvider.SmallImageList;
-            this.LargeImageList = TestDataProvider.LargeImageList;
-            this.Items.AddRange(new string[] { "First Item", "Second Item", "Third Item", "Fourth Item", "Fifth Item" }.Select((s, i) => new ListViewItem(s, i)).ToArray());
-            this.Size = new Size(400, 300);
         }
     }
 }
