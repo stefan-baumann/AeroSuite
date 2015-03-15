@@ -12,13 +12,13 @@ namespace AeroSuite.Test.TestAdapters
 {
     public static class TestAdapters
     {
-        private static Dictionary<Type, Type> testAdapters = Assembly.GetAssembly(typeof(TestAdapters)).GetTypes().Where(t => t.IsClass && !t.IsAbstract && typeof(TestAdapter).IsAssignableFrom(t) && t.BaseType?.GetGenericArguments().Length == 1).ToDictionary(t => t.BaseType?.GetGenericArguments()[0], t => t);
+        private static Dictionary<Type, Type> testAdapters = Assembly.GetAssembly(typeof(TestAdapters)).GetTypes().Where(t => t.IsClass && !t.IsAbstract && typeof(TestAdapter).IsAssignableFrom(t) && t.BaseType.GetGenericArguments().Length == 1).ToDictionary(t => t.BaseType.GetGenericArguments()[0], t => t);
         public static TestAdapter Item(Control control)
         {
             Type testAdapterType;
             if (testAdapters.TryGetValue(control.GetType(), out testAdapterType))
             {
-                return testAdapterType.GetConstructor(new Type[] { control.GetType() })?.Invoke(new object[] {control}) as TestAdapter;
+                return testAdapterType.GetConstructor(new Type[] { control.GetType() }).Invoke(new object[] {control}) as TestAdapter;
             }
             return null;
         }

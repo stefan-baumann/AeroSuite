@@ -40,7 +40,7 @@ namespace AeroSuite.Controls
             }
         }
 
-        private NavigationButtonType type { get; set; } = NavigationButtonType.Back;
+        private NavigationButtonType type = NavigationButtonType.Back;
         /// <summary>
         /// Indicates the type.
         /// </summary>
@@ -93,7 +93,7 @@ namespace AeroSuite.Controls
             base.OnPaint(e);
         }
 
-        protected PushButtonState state { get; set; } = PushButtonState.Normal;
+        protected PushButtonState state = PushButtonState.Normal;
 
         /// <summary>
         /// Paints the button with visual styles.
