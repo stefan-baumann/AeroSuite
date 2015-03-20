@@ -216,3 +216,4 @@ pip-log.txt
 .mr.developer.cfg
 *.jrs
 *.ide
+AeroSuite.sln.GhostDoc.xml
