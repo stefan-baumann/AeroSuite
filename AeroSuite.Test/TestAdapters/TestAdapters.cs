@@ -30,18 +30,23 @@ namespace AeroSuite.Test.TestAdapters
         public AeroListViewTestAdapter(AeroListView control) : base(control)
         {
             var smallImageList = new ImageList() { ColorDepth = ColorDepth.Depth32Bit, ImageSize = new Size(16, 16) };
-            smallImageList.Images.Add(new Icon(Properties.Resources.All_Users_Folder, new Size(16, 16)).ToBitmap());
-            smallImageList.Images.Add(new Icon(Properties.Resources.Pictures, new Size(16, 16)).ToBitmap());
-            smallImageList.Images.Add(new Icon(Properties.Resources.Recycle_Bin, new Size(16, 16)).ToBitmap());
-            smallImageList.Images.Add(new Icon(Properties.Resources.UAC, new Size(16, 16)).ToBitmap());
-            smallImageList.Images.Add(new Icon(Properties.Resources.Videos, new Size(16, 16)).ToBitmap());
-
             var largeImageList = new ImageList() { ColorDepth = ColorDepth.Depth32Bit, ImageSize = new Size(48, 48) };
-            largeImageList.Images.Add(new Icon(Properties.Resources.All_Users_Folder, new Size(48, 48)).ToBitmap());
-            largeImageList.Images.Add(new Icon(Properties.Resources.Pictures, new Size(48, 48)).ToBitmap());
-            largeImageList.Images.Add(new Icon(Properties.Resources.Recycle_Bin, new Size(48, 48)).ToBitmap());
-            largeImageList.Images.Add(new Icon(Properties.Resources.UAC, new Size(48, 48)).ToBitmap());
-            largeImageList.Images.Add(new Icon(Properties.Resources.Videos, new Size(48, 48)).ToBitmap());
+
+            try
+            {
+                smallImageList.Images.Add(new Icon(Properties.Resources.All_Users_Folder, new Size(16, 16)).ToBitmap());
+                smallImageList.Images.Add(new Icon(Properties.Resources.Pictures, new Size(16, 16)).ToBitmap());
+                smallImageList.Images.Add(new Icon(Properties.Resources.Recycle_Bin, new Size(16, 16)).ToBitmap());
+                smallImageList.Images.Add(new Icon(Properties.Resources.UAC, new Size(16, 16)).ToBitmap());
+                smallImageList.Images.Add(new Icon(Properties.Resources.Videos, new Size(16, 16)).ToBitmap());
+
+                largeImageList.Images.Add(new Icon(Properties.Resources.All_Users_Folder, new Size(48, 48)).ToBitmap());
+                largeImageList.Images.Add(new Icon(Properties.Resources.Pictures, new Size(48, 48)).ToBitmap());
+                largeImageList.Images.Add(new Icon(Properties.Resources.Recycle_Bin, new Size(48, 48)).ToBitmap());
+                largeImageList.Images.Add(new Icon(Properties.Resources.UAC, new Size(48, 48)).ToBitmap());
+                largeImageList.Images.Add(new Icon(Properties.Resources.Videos, new Size(48, 48)).ToBitmap());
+            }
+            catch { }
 
             control.SmallImageList = smallImageList;
             control.LargeImageList = largeImageList;
@@ -74,11 +79,15 @@ namespace AeroSuite.Test.TestAdapters
         public AeroTreeViewTestAdapter(AeroTreeView control) : base(control)
         {
             var imageList = new ImageList() { ColorDepth = ColorDepth.Depth32Bit, ImageSize = new Size(16, 16) };
-            imageList.Images.Add(new Icon(Properties.Resources.All_Users_Folder, new Size(16, 16)).ToBitmap());
-            imageList.Images.Add(new Icon(Properties.Resources.Pictures, new Size(16, 16)).ToBitmap());
-            imageList.Images.Add(new Icon(Properties.Resources.Recycle_Bin, new Size(16, 16)).ToBitmap());
-            imageList.Images.Add(new Icon(Properties.Resources.UAC, new Size(16, 16)).ToBitmap());
-            imageList.Images.Add(new Icon(Properties.Resources.Videos, new Size(16, 16)).ToBitmap());
+            try
+            {
+                imageList.Images.Add(new Icon(Properties.Resources.All_Users_Folder, new Size(16, 16)).ToBitmap());
+                imageList.Images.Add(new Icon(Properties.Resources.Pictures, new Size(16, 16)).ToBitmap());
+                imageList.Images.Add(new Icon(Properties.Resources.Recycle_Bin, new Size(16, 16)).ToBitmap());
+                imageList.Images.Add(new Icon(Properties.Resources.UAC, new Size(16, 16)).ToBitmap());
+                imageList.Images.Add(new Icon(Properties.Resources.Videos, new Size(16, 16)).ToBitmap());
+            }
+            catch { }
 
             control.ImageList = imageList;
             TreeNode root = new TreeNode("Root", 0, 0, new TreeNode[] { new TreeNode("First Child", 1, 1, new TreeNode[] { new TreeNode("Second Child", 2, 2), new TreeNode("Third Child", 3, 3) }), new TreeNode("Fourth Child", 4, 4), });
