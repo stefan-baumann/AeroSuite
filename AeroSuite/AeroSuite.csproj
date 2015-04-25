@@ -44,20 +44,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\AeroLinkLabel.cs" />
-    <Compile Include="Controls\AeroListView.cs" />
-    <Compile Include="Controls\AeroProgressBar.cs" />
-    <Compile Include="Controls\AeroTreeView.cs" />
-    <Compile Include="Controls\BottomPanel.cs" />
-    <Compile Include="Controls\CommandLink.cs" />
-    <Compile Include="Controls\CueComboBox.cs" />
-    <Compile Include="Controls\CueTextBox.cs" />
-    <Compile Include="Controls\HeaderlessTabControl.cs" />
-    <Compile Include="Controls\CaptionLabel.cs" />
-    <Compile Include="Controls\NavigationButton.cs" />
-    <Compile Include="Controls\Seperator.cs" />
-    <Compile Include="Controls\ShieldButton.cs" />
-    <Compile Include="Controls\VerticalAeroProgressBar.cs" />
+    <Compile Include="AnimationEngine\EasingMethod.cs" />
+    <Compile Include="AnimationEngine\EasingMethods\Extended\EasingMethods.Extended.Back.cs" />
+    <Compile Include="AnimationEngine\EasingMethods\Extended\EasingMethods.Extended.Bounce.cs" />
+    <Compile Include="AnimationEngine\EasingMethods\Extended\EasingMethods.Extended.Elastic.cs" />
+    <Compile Include="AnimationEngine\EasingMethods.Extended.cs" />
+    <Compile Include="AnimationEngine\EasingMethods\EasingMethods.Linear.cs" />
+    <Compile Include="AnimationEngine\EasingMethods\EasingMethods.Exponential.cs" />
+    <Compile Include="AnimationEngine\EasingMethods\EasingMethods.Quadratic.cs" />
+    <Compile Include="AnimationEngine\EasingMethods\EasingMethods.Quartic.cs" />
+    <Compile Include="AnimationEngine\EasingMethods\EasingMethods.Quintic.cs" />
+    <Compile Include="AnimationEngine\EasingMethods\EasingMethods.Sinus.cs" />
+    <Compile Include="AnimationEngine\EasingMethods.cs" />
+    <Compile Include="AnimationEngine\EasingMethods\EasingMethods.Cubic.cs" />
+    <Compile Include="AnimationEngine\ValueFactories.cs" />
+    <Compile Include="AnimationEngine\ValueFactory.cs" />
+    <Compile Include="AnimationEngine\ValueFactoryCreator.cs" />
+    <Compile Include="AnimationEngine\ValueProvider.cs" />
+    <Compile Include="Controls\AeroLinkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\AeroListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\AeroProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\AeroTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BottomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CommandLink.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CueComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CueTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\HeaderlessTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CaptionLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NavigationButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Seperator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ShieldButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\VerticalAeroProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ImageExtractor.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="PlatformHelper.cs" />
@@ -81,6 +126,15 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\CommandLink.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnimationEngine\EasingMethods\EasingMethods.Circular.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnimationEngine\EasingMethods\EasingMethods.Default.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AnimationEngine\AnimationEngine.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AeroSuite.AnimationEngine.EasingMethods">
+    <Position X="0.5" Y="1.5" Width="2" />
+    <Members>
+      <Field Name="circularEaseInOut" Hidden="true" />
+      <Field Name="cubicEaseInOut" Hidden="true" />
+      <Field Name="exponentialEaseInOut" Hidden="true" />
+      <Field Name="quadraticEaseInOut" Hidden="true" />
+      <Field Name="quarticEaseInOut" Hidden="true" />
+      <Field Name="quinticEaseInOut" Hidden="true" />
+      <Field Name="radianFactor" Hidden="true" />
+      <Field Name="sinusEaseInOut" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="AeroSuite.AnimationEngine.EasingMethods.Extended">
+        <Members>
+          <Field Name="b" Hidden="true" />
+          <Field Name="b2" Hidden="true" />
+          <Field Name="b3" Hidden="true" />
+          <Field Name="b4" Hidden="true" />
+          <Field Name="back" Hidden="true" />
+          <Field Name="backEaseInOut" Hidden="true" />
+          <Field Name="bF" Hidden="true" />
+          <Field Name="bF1" Hidden="true" />
+          <Field Name="bF2" Hidden="true" />
+          <Field Name="bF3" Hidden="true" />
+          <Field Name="bP2" Hidden="true" />
+          <Field Name="bP3" Hidden="true" />
+          <Field Name="bP4" Hidden="true" />
+          <Field Name="elast" Hidden="true" />
+          <Field Name="elasticEaseInOut" Hidden="true" />
+        </Members>
+        <TypeIdentifier>
+          <NewMemberFileName>AnimationEngine\EasingMethods.Extended._.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>zAMgIkAwkAIAAAgggIgQIACAAACAAAggABBaAAAEQQA=</HashCode>
+      <FileName>AnimationEngine\EasingMethods\EasingMethods.Circular.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AeroSuite.AnimationEngine.ValueFactories">
+    <Position X="2.75" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACAgAACAAAAAAAAAICAAAAEAAQ0BAwIQEEAAAAUAAAA=</HashCode>
+      <FileName>AnimationEngine\ValueFactories.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AeroSuite.AnimationEngine.ValueFactoryCreator">
+    <Position X="2.75" Y="7" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AnimationEngine\ValueFactoryCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AeroSuite.AnimationEngine.ValueProvider&lt;T&gt;">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAACRAABACAQAAAAIAAAAAQAAAAAgAAAAAA=</HashCode>
+      <FileName>AnimationEngine\ValueProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Delegate Name="AeroSuite.AnimationEngine.EasingMethod">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>AnimationEngine\EasingMethod.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="AeroSuite.AnimationEngine.ValueFactory&lt;T&gt;">
+    <Position X="2.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AnimationEngine\ValueFactory.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
