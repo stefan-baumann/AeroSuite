@@ -12,7 +12,7 @@ namespace AeroSuite.Controls
     /// An aero-styled ListView.
     /// </summary>
     /// <remarks>
-    /// A ListView with the "Explorer"-WindowTheme applied and.
+    /// A ListView with the "Explorer"-WindowTheme applied.
     /// If the operating system is Windows XP or older, nothing will be changed.
     /// </remarks>
     [DesignerCategory("Code")]
