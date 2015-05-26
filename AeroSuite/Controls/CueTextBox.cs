@@ -81,7 +81,30 @@ namespace AeroSuite.Controls
             }
         }
 
-
+        /// <summary>
+        /// Gets or sets a value indicating whether this is a multiline <see cref="T:System.Windows.Forms.TextBox" /> control.
+        /// </summary>
+        /// <exception cref="System.InvalidOperationException">Multiline cannot be enabled.</exception>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
+        public override bool Multiline
+        {
+            get
+            {
+                return base.Multiline;
+            }
+            set
+            {
+                if (value)
+                {
+                    throw new InvalidOperationException("Multiline cannot be enabled.");
+                }
+            }
+        }
 
         /// <summary>
         /// Updates the cue.
