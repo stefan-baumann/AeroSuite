@@ -85,6 +85,9 @@
     <Compile Include="Controls\CueTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\Display.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\HeaderlessTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -102,6 +105,9 @@
     </Compile>
     <Compile Include="Controls\VerticalAeroProgressBar.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewBase.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ImageExtractor.cs" />
     <Compile Include="NativeMethods.cs" />
