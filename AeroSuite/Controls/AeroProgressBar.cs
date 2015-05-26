@@ -141,6 +141,28 @@ namespace AeroSuite.Controls
         }
 
         /// <summary>
+        /// Gets or sets a value indicating whether control's elements are aligned to support locales using right-to-left fonts.
+        /// </summary>
+        /// <PermissionSet>
+        ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+        ///   <IPermission class="System.Diagnostics.PerformanceCounterPermission, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        /// </PermissionSet>
+        public override RightToLeft RightToLeft
+        {
+            get
+            {
+                return base.RightToLeft;
+            }
+            set
+            {
+                base.RightToLeft = value;
+                this.UpdateState();
+            }
+        }
+
+        /// <summary>
         /// Overrides ProgressBar.CreateParams
         /// </summary>
         /// <value>
