@@ -36,7 +36,7 @@ namespace AeroSuite.Controls
         /// </value>
         [Category("Appearance")]
         [Description("The state of the progressbar. Typically indicated by the color of the bar (green, yellow, red)")]
-        public ProgressBarState State
+        public virtual ProgressBarState State
         {
             get
             {
@@ -75,7 +75,7 @@ namespace AeroSuite.Controls
         /// <value>
         /// The value.
         /// </value>
-        public new int Value
+        public virtual new int Value
         {
             get
             {
@@ -98,7 +98,7 @@ namespace AeroSuite.Controls
         /// <value>
         /// The style.
         /// </value>
-        public new ProgressBarStyle Style
+        public virtual new ProgressBarStyle Style
         {
             get
             {
@@ -123,7 +123,7 @@ namespace AeroSuite.Controls
         /// </remarks>
         [Category("Appearance")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public new Color ForeColor
+        public virtual new Color ForeColor
         {
             get { return base.ForeColor; }
             set { base.ForeColor = value; }

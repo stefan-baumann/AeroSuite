@@ -57,7 +57,7 @@ namespace AeroSuite.Controls
         /// </remarks>
         [Category("Behaviour")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public new bool HotTracking
+        public virtual new bool HotTracking
         {
             get { return base.HotTracking; }
             set { base.HotTracking = value; }
@@ -74,7 +74,7 @@ namespace AeroSuite.Controls
         /// </remarks>
         [Category("Behaviour")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public new bool ShowLines
+        public virtual new bool ShowLines
         {
             get { return base.ShowLines; }
             set { base.ShowLines = value; }

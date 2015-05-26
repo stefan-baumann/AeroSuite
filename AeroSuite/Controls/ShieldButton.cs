@@ -79,7 +79,7 @@ namespace AeroSuite.Controls
         /// </value>
         [Category("Appearance")]
         [Description("The flat style appearance of the shield button control.")]
-        public new FlatStyle FlatStyle
+        public virtual new FlatStyle FlatStyle
         {
             get
             {

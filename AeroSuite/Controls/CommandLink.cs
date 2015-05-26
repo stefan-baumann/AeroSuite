@@ -60,7 +60,7 @@ namespace AeroSuite.Controls
         [Category("Appearance")]
         [Description("The note text shown below the main text.")]
         [Localizable(true)]
-        public string Note
+        public virtual string Note
         {
             get
             {

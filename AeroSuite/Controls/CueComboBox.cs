@@ -43,7 +43,7 @@ namespace AeroSuite.Controls
         [Category("Appearance")]
         [Description("The text shown on the Cue Banner.")]
         [Localizable(true)]
-        public string Cue
+        public virtual string Cue
         {
             get
             {

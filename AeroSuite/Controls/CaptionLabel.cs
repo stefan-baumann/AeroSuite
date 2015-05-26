@@ -48,7 +48,7 @@ namespace AeroSuite.Controls
         /// </remarks>
         [Category("Appearance")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public new Color ForeColor
+        public virtual new Color ForeColor
         {
             get { return base.ForeColor; }
             set { base.ForeColor = value; }
@@ -65,7 +65,7 @@ namespace AeroSuite.Controls
         /// </remarks>
         [Category("Appearance")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public new Font Font
+        public virtual new Font Font
         {
             get { return base.Font; }
             set { base.Font = value; }

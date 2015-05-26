@@ -52,7 +52,7 @@ namespace AeroSuite.Controls
         [RefreshProperties(RefreshProperties.All)]
         [Description("Indicates the type.")]
         [Category("Appearance")]
-        public NavigationButtonType Type
+        public virtual NavigationButtonType Type
         {
             get
             {
@@ -166,13 +166,6 @@ namespace AeroSuite.Controls
                         break;
                 }
             }
-
-
-
-            //using (GraphicsPath gp = new GraphicsPath())
-            //{
-            //    gp.AddEllipse(new Rectangle(2, 2, this.Width - 4, this.Height - 4));
-            //}
         }
 
         /// <summary>

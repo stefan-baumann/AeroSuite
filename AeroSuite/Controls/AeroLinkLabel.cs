@@ -82,7 +82,7 @@ namespace AeroSuite.Controls
         /// </remarks>
         [Category("Appearance")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public new Color LinkColor
+        public virtual new Color LinkColor
         {
             get { return base.LinkColor; }
             set { base.LinkColor = value; }
@@ -99,7 +99,7 @@ namespace AeroSuite.Controls
         /// </remarks>
         [Category("Appearance")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public new Color ActiveLinkColor
+        public virtual new Color ActiveLinkColor
         {
             get { return base.ActiveLinkColor; }
             set { base.ActiveLinkColor = value; }
@@ -116,7 +116,7 @@ namespace AeroSuite.Controls
         /// </remarks>
         [Category("Appearance")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public new Color DisabledLinkColor
+        public virtual new Color DisabledLinkColor
         {
             get { return base.DisabledLinkColor; }
             set { base.DisabledLinkColor = value; }
@@ -133,7 +133,7 @@ namespace AeroSuite.Controls
         /// </remarks>
         [Category("Appearance")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public new Color VisitedLinkColor
+        public virtual new Color VisitedLinkColor
         {
             get { return base.VisitedLinkColor; }
             set { base.VisitedLinkColor = value; }
@@ -150,7 +150,7 @@ namespace AeroSuite.Controls
         /// </remarks>
         [Category("Appearance")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public new LinkBehavior LinkBehavior
+        public virtual new LinkBehavior LinkBehavior
         {
             get { return base.LinkBehavior; }
             set { base.LinkBehavior = value; }
