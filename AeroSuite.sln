@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AeroSuite", "AeroSuite\Aero
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AeroSuite.Test", "AeroSuite.Test\AeroSuite.Test.csproj", "{EDA0FC84-6D5C-4DFB-9137-7B3D24AFBD66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AeroSuite.AnimationEngine.CustomAnimationTest", "AeroSuite.AnimationEngine.CustomAnimationTest\AeroSuite.AnimationEngine.CustomAnimationTest.csproj", "{5B99F346-7675-4133-9915-FB91B3CB8E6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EDA0FC84-6D5C-4DFB-9137-7B3D24AFBD66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDA0FC84-6D5C-4DFB-9137-7B3D24AFBD66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDA0FC84-6D5C-4DFB-9137-7B3D24AFBD66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B99F346-7675-4133-9915-FB91B3CB8E6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B99F346-7675-4133-9915-FB91B3CB8E6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B99F346-7675-4133-9915-FB91B3CB8E6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B99F346-7675-4133-9915-FB91B3CB8E6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
