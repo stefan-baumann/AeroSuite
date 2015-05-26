@@ -32,25 +32,40 @@ namespace AeroSuite.Test
         private Control currentControl;
         private void TypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.currentControl != null) this.currentControl.Dispose();
-            var type = (Type)this.TypeComboBox.SelectedItem;
-            this.splitContainer1.Panel1.Controls.Add(this.currentControl = (Control)Activator.CreateInstance(type));
-
-            this.currentControl.Text = type.Name;
-            this.currentControl.SizeChanged += (s, ea) => this.currentControl.Location = new Point((this.splitContainer1.Panel1.Width - this.currentControl.Width) / 2, (this.splitContainer1.Panel1.Height - this.currentControl.Height) / 2);
-            this.currentControl.Location = new Point((this.splitContainer1.Panel1.Width - this.currentControl.Width) / 2, (this.splitContainer1.Panel1.Height - this.currentControl.Height) / 2);
-
-            //Set up the control for testing - the test adapter is not used any further at the moment.
-            var testAdapter = TestAdapters.TestAdapters.Item(this.currentControl);
-
-            //To fix the issue with the button getting a white background color assigned randomly when being created.
-            if (typeof (Button).IsAssignableFrom(type))
+            try
             {
-                (this.currentControl as Button).UseVisualStyleBackColor = true;
+                try
+                {
+                    if (this.currentControl != null) this.currentControl.Dispose();
+                }
+                catch
+                {
+                    //Ignore
+                }
+
+                var type = (Type)this.TypeComboBox.SelectedItem;
+                this.splitContainer1.Panel1.Controls.Add(this.currentControl = (Control)Activator.CreateInstance(type));
+
+                this.currentControl.Text = type.Name;
+                this.currentControl.SizeChanged += (s, ea) => this.currentControl.Location = new Point((this.splitContainer1.Panel1.Width - this.currentControl.Width) / 2, (this.splitContainer1.Panel1.Height - this.currentControl.Height) / 2);
+                this.currentControl.Location = new Point((this.splitContainer1.Panel1.Width - this.currentControl.Width) / 2, (this.splitContainer1.Panel1.Height - this.currentControl.Height) / 2);
+
+                //Set up the control for testing - the test adapter is not used any further at the moment.
+                var testAdapter = TestAdapters.TestAdapters.Item(this.currentControl);
+
+                //To fix the issue with the button getting a white background color assigned randomly when being created.
+                if (typeof(Button).IsAssignableFrom(type))
+                {
+                    (this.currentControl as Button).UseVisualStyleBackColor = true;
+                }
+
+
+                this.ControlPropertyGrid.SelectedObject = this.currentControl;
             }
-
-
-            this.ControlPropertyGrid.SelectedObject = this.currentControl;
+            catch (Exception ex)
+            {
+                MessageBox.Show("An " + ex.GetType().Name + " occured: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void HideGridButton_Click(object sender, EventArgs e)
