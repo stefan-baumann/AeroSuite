@@ -1,5 +1,4 @@
-[![AppVeyor](https://img.shields.io/appveyor/ci/stefan-baumann/aerosuite.svg?style=flat-square)](https://ci.appveyor.com/project/stefan-baumann/aerosuite)
-[![GitHub Issues](https://img.shields.io/github/issues/stefan-baumann/aerosuite.svg?style=flat-square)](https://github.com/stefan-baumann/AeroSuite/issues)<br>
+[![AppVeyor](https://img.shields.io/appveyor/ci/stefan-baumann/aerosuite.svg?style=flat-square)](https://ci.appveyor.com/project/stefan-baumann/aerosuite)<br>
 ![AeroSuite Logo](http://www.vb-paradise.de/index.php/Attachment/32001-AeroSuite-Logo-png/)
 <p>AeroSuite is a WinForms Control Library that provides extended functionality for pre-existing controls and also new controls. Unlike most (if not all) similar libraries, this library is aimed at supporting every platform: Windows XP to 10 and Linux with Mono are supported.</p>
 <p>Every control is drawn natively by the system. If this is not supported by the operating system, it will either automatically fall back to a custom-drawn version or simply not provide the feature (only if it is not essential for the user experience). That allows the use on every platform. In the far future, I'm also planning on creating a workaroung for every added feature to improve the user experience even more.</p>
