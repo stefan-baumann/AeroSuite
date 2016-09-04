@@ -102,7 +102,7 @@ namespace AeroSuite.Controls
         protected virtual void PaintWithVisualStyles(Graphics g)
         {
             //Draw button
-            new VisualStyleRenderer("Navigation", (int)this.type, (int)this.state).DrawBackground(g, this.DisplayRectangle);
+            new VisualStyleRenderer("Navigation", (int)this.type, this.Enabled ? (int)this.state : (int)PushButtonState.Disabled).DrawBackground(g, this.DisplayRectangle);
 
             //Draw Focus Rectangle
             if (this.Focused && this.ShowFocusCues)
@@ -146,24 +146,32 @@ namespace AeroSuite.Controls
                 gp.StartFigure();
                 gp.AddLine(new PointF(innerRect.X + innerRect.Width * 0.25f, innerRect.Y + innerRect.Height * 0.5f), new PointF(innerRect.X + innerRect.Width * 0.75f, innerRect.Y + innerRect.Height * 0.5f));
 
-                switch (this.state)
+                if (!this.Enabled)
                 {
-                    case PushButtonState.Normal:
-                        g.DrawEllipse(this.normalPen, new Rectangle(5, 5, this.Width - 10, this.Height - 10));
-                        g.DrawPath(this.normalPen, gp);
-                        break;
-                    case PushButtonState.Hot:
-                        g.FillEllipse(this.hoverBrush, new Rectangle(4, 4, this.Width - 8, this.Height - 8));
-                        g.DrawPath(this.hoverArrowPen, gp);
-                        break;
-                    case PushButtonState.Pressed:
-                        g.FillEllipse(this.pressedBrush, new Rectangle(4, 4, this.Width - 8, this.Height - 8));
-                        g.DrawPath(this.pressedArrowPen, gp);
-                        break;
-                    default:
-                        g.DrawEllipse(this.disabledPen, new Rectangle(5, 5, this.Width - 10, this.Height - 10));
-                        g.DrawPath(this.disabledPen, gp);
-                        break;
+                    g.DrawEllipse(this.disabledPen, new Rectangle(5, 5, this.Width - 10, this.Height - 10));
+                    g.DrawPath(this.disabledPen, gp);
+                }
+                else
+                {
+                    switch (this.state)
+                    {
+                        case PushButtonState.Normal:
+                            g.DrawEllipse(this.normalPen, new Rectangle(5, 5, this.Width - 10, this.Height - 10));
+                            g.DrawPath(this.normalPen, gp);
+                            break;
+                        case PushButtonState.Hot:
+                            g.FillEllipse(this.hoverBrush, new Rectangle(4, 4, this.Width - 8, this.Height - 8));
+                            g.DrawPath(this.hoverArrowPen, gp);
+                            break;
+                        case PushButtonState.Pressed:
+                            g.FillEllipse(this.pressedBrush, new Rectangle(4, 4, this.Width - 8, this.Height - 8));
+                            g.DrawPath(this.pressedArrowPen, gp);
+                            break;
+                        default:
+                            g.DrawEllipse(this.disabledPen, new Rectangle(5, 5, this.Width - 10, this.Height - 10));
+                            g.DrawPath(this.disabledPen, gp);
+                            break;
+                    }
                 }
             }
         }

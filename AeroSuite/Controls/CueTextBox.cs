@@ -45,6 +45,7 @@ namespace AeroSuite.Controls
         [Category("Appearance")]
         [Description("The text shown on the Cue Banner.")]
         [Localizable(true)]
+        [Bindable(true)]
         public virtual string Cue
         {
             get
@@ -68,6 +69,8 @@ namespace AeroSuite.Controls
         [DefaultValue(false)]
         [Category("Appearance")]
         [Description("Determines if the cue banner is shown even when the textbox is focused.")]
+        [Localizable(true)]
+        [Bindable(true)]
         public virtual bool RetainCue
         {
             get

@@ -60,6 +60,7 @@ namespace AeroSuite.Controls
         [Category("Appearance")]
         [Description("The note text shown below the main text.")]
         [Localizable(true)]
+        [Bindable(true)]
         public virtual string Note
         {
             get

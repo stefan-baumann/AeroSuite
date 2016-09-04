@@ -105,54 +105,28 @@
     <Compile Include="AnimationEngine\ValueFactory.cs" />
     <Compile Include="AnimationEngine\ValueFactoryCreator.cs" />
     <Compile Include="AnimationEngine\ValueProvider.cs" />
-    <Compile Include="Controls\AeroLinkLabel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\AeroListView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\AeroProgressBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\AeroTreeView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\BottomPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\CommandLink.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\CueComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\CueTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Display.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\HeaderlessTabControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\CaptionLabel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\NavigationButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Seperator.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\ShieldButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\VerticalAeroProgressBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Controls\AeroLinkLabel.cs" />
+    <Compile Include="Controls\AeroListView.cs" />
+    <Compile Include="Controls\AeroProgressBar.cs" />
+    <Compile Include="Controls\AeroTreeView.cs" />
+    <Compile Include="Controls\BottomPanel.cs" />
+    <Compile Include="Controls\CommandLink.cs" />
+    <Compile Include="Controls\CueComboBox.cs" />
+    <Compile Include="Controls\CueTextBox.cs" />
+    <Compile Include="Controls\Display.cs" />
+    <Compile Include="Controls\CaptionLabel.cs" />
+    <Compile Include="Controls\HeaderlessTabControl.cs" />
+    <Compile Include="Controls\HeaderlessTabPage.cs" />
+    <Compile Include="Controls\HeaderlessTabPageCollection.cs" />
+    <Compile Include="Controls\NavigationButton.cs" />
+    <Compile Include="Controls\RadioButtonGroup.cs" />
+    <Compile Include="Controls\Seperator.cs" />
+    <Compile Include="Controls\ShieldButton.cs" />
+    <Compile Include="Controls\VerticalAeroProgressBar.cs" />
     <Compile Include="Controls\ViewBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Extensions\GenericExtensions.cs" />
     <Compile Include="ImageExtractor.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="PlatformHelper.cs" />

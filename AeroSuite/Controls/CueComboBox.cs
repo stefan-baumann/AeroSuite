@@ -15,8 +15,8 @@ namespace AeroSuite.Controls
     /// A cue banner is the text that is shown when the ComboBox does not have a selected item.
     /// </remarks>
     [DesignerCategory("Code")]
-    [DisplayName("Cue TextBox")]
-    [Description("A TextBox with cue banner support.")]
+    [DisplayName("Cue ComboBox")]
+    [Description("A ComboBox with cue banner support.")]
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(ComboBox))]
     public class CueComboBox
@@ -43,6 +43,7 @@ namespace AeroSuite.Controls
         [Category("Appearance")]
         [Description("The text shown on the Cue Banner.")]
         [Localizable(true)]
+        [Bindable(true)]
         public virtual string Cue
         {
             get

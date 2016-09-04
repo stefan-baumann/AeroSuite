@@ -65,10 +65,12 @@ namespace AeroSuite.Controls
             }
             set
             {
-                if (value == this.view)
-                {
-                    return;
-                }
+                //if (value == this.view)
+                //{
+                //    return;
+                //}
+
+                this.ClearViewInternal();
 
                 if (this.view != null)
                 {

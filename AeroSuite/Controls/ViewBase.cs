@@ -11,17 +11,17 @@ namespace AeroSuite.Controls
     /// <summary>
     /// <para>A base class for creating Views that can be displayed in a <see cref="Display"/>.</para>
     /// <para>There are three ways for creating Views:</para>
-    /// <para>1.: Create a file of type "Inherited User Control" (you can do it by pressind Crtl+Shift+A in Visual Studio and then selecting "Windows Forms > Inherited User Control"; then select <see cref="VeiwBase"/> as the class to inherit from)</para>
+    /// <para>1.: Create a file of type "Inherited User Control" (you can do it by pressind Crtl+Shift+A in Visual Studio and then selecting "Windows Forms > Inherited User Control"; then select <see cref="ViewBase"/> as the class to inherit from)</para>
     /// <para>2.: Create a new form or UserControl and edit the code so that it inherits from <see cref="ViewBase"/>.</para>
     /// <para>3.: Create a new class and make it inherit from <see cref="ViewBase"/>. However, Designer Code will be generated in the main code file.</para>
     /// </summary>
     /// <remarks>
     /// Combined with a <see cref="Display"/>, this is the perfect alternative to the <see cref="HeaderlessTabControl"/>.
     /// </remarks>
-    [DesignerCategory("Code")]
-    [DisplayName("Shield Button")]
-    [Description("A normal button with a Shield.")]
-    [ToolboxItem(true)]
+    //[DesignerCategory("Code")]
+    [DisplayName("View Base")]
+    [Description("A base Control for Views. Not to be put directly on a form.")]
+    [ToolboxItem(false)]
     [ToolboxBitmap(typeof(TabPage))]
     public class ViewBase
         : UserControl
@@ -34,6 +34,7 @@ namespace AeroSuite.Controls
             this.BackColor = SystemColors.Window;
             this.Font = SystemFonts.MessageBoxFont;
             this.Size = new Size(750, 500);
+            this.Dock = DockStyle.Fill;
 
             this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
@@ -58,30 +59,15 @@ namespace AeroSuite.Controls
                     return;
                 }
 
-                if (this.UsedInMultiViewDisplay)
+                if (this.display != null)
                 {
-                    this.display = value;
+                    this.display.ClearViewInternal();
                 }
-                else
-                {
-                    if (this.display != null)
-                    {
-                        this.display.ClearViewInternal();
-                    }
-                    
-                    this.SetDisplayInternal(value, true);
-                }
+
+                this.SetDisplayInternal(value, true);
             }
         }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this view is used in an MultiViewDisplay.
-        /// </summary>
-        /// <value>
-        /// <c>true</c> if used in an MultiViewDisplay; otherwise, <c>false</c>.
-        /// </value>
-        internal virtual bool UsedInMultiViewDisplay { get; set; }
-
+        
         /// <summary>
         /// Raises the <see cref="E:System.Windows.Forms.ContainerControl.OnParentChanged" /> event.
         /// </summary>
@@ -89,11 +75,10 @@ namespace AeroSuite.Controls
         /// <exception cref="System.InvalidOperationException">A View cannot be put in anything other than a Display.</exception>
         protected override void OnParentChanged(EventArgs e)
         {
-            if (!this.DesignMode && !(this.Parent is Display))
+            if (!this.DesignMode && this.Parent != null && !(this.Parent is Display))
             {
                 throw new InvalidOperationException("A View cannot be put in anything other than a Display.");
             }
-            MessageBox.Show(this.Parent.ToString());
 
             base.OnParentChanged(e);
         }
