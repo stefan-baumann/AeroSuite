@@ -246,7 +246,6 @@ namespace AeroSuite.Controls
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         protected override void OnEnabledChanged(EventArgs e)
         {
-            this.state = this.Enabled ? PushButtonState.Normal : PushButtonState.Disabled;
             this.Invalidate();
             base.OnEnabledChanged(e);
         }
