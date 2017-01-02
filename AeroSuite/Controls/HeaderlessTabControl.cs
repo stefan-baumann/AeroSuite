@@ -29,8 +29,10 @@ namespace AeroSuite.Controls
         /// </summary>
         public HeaderlessTabControl()
         {
-            this.TabPages = new ObservableCollection<HeaderlessTabPage>();
-            this.TabPages.Add(new HeaderlessTabPage());
+            this.TabPages = new ObservableCollection<HeaderlessTabPage>
+            {
+                new HeaderlessTabPage()
+            };
         }
 
         private ObservableCollection<HeaderlessTabPage> tabPages;
