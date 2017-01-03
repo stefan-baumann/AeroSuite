@@ -118,6 +118,7 @@
     <Compile Include="Controls\HeaderlessTabControl.cs" />
     <Compile Include="Controls\HeaderlessTabPage.cs" />
     <Compile Include="Controls\HeaderlessTabPageCollection.cs" />
+    <Compile Include="Controls\HotkeyBox.cs" />
     <Compile Include="Controls\NavigationButton.cs" />
     <Compile Include="Controls\RadioButtonGroup.cs" />
     <Compile Include="Controls\Seperator.cs" />
