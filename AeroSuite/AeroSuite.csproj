@@ -127,6 +127,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Extensions\GenericExtensions.cs" />
+    <Compile Include="Forms\BorderlessForm.cs" />
     <Compile Include="ImageExtractor.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="PlatformHelper.cs" />
