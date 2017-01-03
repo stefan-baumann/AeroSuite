@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using AeroSuite.Test.TestAdapters;
+using AeroSuite.Forms;
 
 namespace AeroSuite.Test
 {
@@ -72,5 +73,14 @@ namespace AeroSuite.Test
         {
             this.ClientSize = new Size(this.splitContainer1.Panel1.Width, this.ClientSize.Height);
         }
+
+        private void BorderlessFormTestButton_Click(object sender, EventArgs e)
+        {
+            new BorderlessFormTest().ShowDialog();
+        }
+
+        private class BorderlessFormTest
+            : BorderlessForm
+        { }
     }
 }

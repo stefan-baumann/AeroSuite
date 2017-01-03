@@ -32,6 +32,7 @@
             this.ControlPropertyGrid = new System.Windows.Forms.PropertyGrid();
             this.TypeComboBox = new System.Windows.Forms.ComboBox();
             this.HideGridButton = new System.Windows.Forms.Button();
+            this.BorderlessFormTestButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -47,6 +48,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.BorderlessFormTestButton);
             this.splitContainer1.Panel2.Controls.Add(this.ControlPropertyGrid);
             this.splitContainer1.Panel2.Controls.Add(this.TypeComboBox);
             this.splitContainer1.Panel2.Controls.Add(this.HideGridButton);
@@ -86,6 +88,17 @@
             this.HideGridButton.UseVisualStyleBackColor = true;
             this.HideGridButton.Click += new System.EventHandler(this.HideGridButton_Click);
             // 
+            // BorderlessFormTestButton
+            // 
+            this.BorderlessFormTestButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BorderlessFormTestButton.Location = new System.Drawing.Point(0, 44);
+            this.BorderlessFormTestButton.Name = "BorderlessFormTestButton";
+            this.BorderlessFormTestButton.Size = new System.Drawing.Size(421, 23);
+            this.BorderlessFormTestButton.TabIndex = 4;
+            this.BorderlessFormTestButton.Text = "Show Borderless Form";
+            this.BorderlessFormTestButton.UseVisualStyleBackColor = true;
+            this.BorderlessFormTestButton.Click += new System.EventHandler(this.BorderlessFormTestButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,6 +123,7 @@
         private System.Windows.Forms.PropertyGrid ControlPropertyGrid;
         private System.Windows.Forms.ComboBox TypeComboBox;
         private System.Windows.Forms.Button HideGridButton;
+        private System.Windows.Forms.Button BorderlessFormTestButton;
     }
 }
 
