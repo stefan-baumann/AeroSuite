@@ -23,12 +23,14 @@ namespace AeroSuite.Forms
     public abstract class BorderlessForm
         : Form
     {
+        private const int CS_DROPSHADOW = 0x20000;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="BorderlessForm"/> class.
         /// </summary>
         public BorderlessForm()
         {
-            this.FormBorderStyle = FormBorderStyle.None;
+            base.FormBorderStyle = FormBorderStyle.None;
             this.BackColor = SystemColors.Window;
             this.Font = SystemFonts.MessageBoxFont;
         }
@@ -80,10 +82,11 @@ namespace AeroSuite.Forms
             set
             {
                 this.borderless = value;
-                if (this.IsHandleCreated)
-                {
-                    this.UpdateStyle();
-                }
+                base.FormBorderStyle = value ? FormBorderStyle.None : FormBorderStyle.Sizable;
+                //if (this.IsHandleCreated)
+                //{
+                //    this.UpdateStyle();
+                //}
             }
         }
 
@@ -109,7 +112,8 @@ namespace AeroSuite.Forms
                 this.showShadow = value;
                 if (this.IsHandleCreated)
                 {
-                    this.UpdateStyle();
+                    //this.UpdateStyle();
+                    this.RecreateHandle();
                 }
             }
         }
@@ -146,11 +150,19 @@ namespace AeroSuite.Forms
         {
             if (this.Borderless)
             {
-                return (uint)(WindowStyles.Overlapped | WindowStyles.ThickFrame | WindowStyles.Caption | WindowStyles.SysMenu | WindowStyles.MinimizeBox | WindowStyles.MaximizeBox);
+                if (PlatformHelper.VistaOrHigher && NativeMethods.DwmIsCompositionEnabled())
+                {
+                    return (uint)(WindowStyles.Overlapped | WindowStyles.ThickFrame | WindowStyles.Caption | WindowStyles.SysMenu | WindowStyles.MinimizeBox | WindowStyles.MaximizeBox);
+                }
+                else
+                {
+                    return (uint)(WindowStyles.Overlapped | WindowStyles.ThickFrame | WindowStyles.SysMenu);
+                }
             }
             else
             {
-                return (uint)(WindowStyles.Popup | WindowStyles.ThickFrame | WindowStyles.Caption | WindowStyles.SysMenu | WindowStyles.MinimizeBox | WindowStyles.MaximizeBox);
+                //return (uint)(WindowStyles.Popup | WindowStyles.ThickFrame | WindowStyles.Caption | WindowStyles.SysMenu | WindowStyles.MinimizeBox | WindowStyles.MaximizeBox);
+                return (uint)base.CreateParams.Style;
             }
         }
 
@@ -159,42 +171,46 @@ namespace AeroSuite.Forms
         /// </summary>
         protected virtual void InitializeShadow()
         {
-            if (PlatformHelper.VistaOrHigher && NativeMethods.DwmIsCompositionEnabled() && this.Shadow)
+            if (this.Shadow && this.Borderless)
             {
-                Margins margins = new Margins() { BottomHeight = 1, LeftWidth = 1, RightWidth = 1, TopHeight = 1 };
-                NativeMethods.DwmExtendFrameIntoClientArea(this.Handle, ref margins);
-            }
-            else
-            {
-                Margins margins = new Margins() { BottomHeight = 0, LeftWidth = 0, RightWidth = 0, TopHeight = 0 };
+                if (PlatformHelper.VistaOrHigher && NativeMethods.DwmIsCompositionEnabled())
+                {
+                    if (this.Shadow)
+                    {
+                        Margins margins = new Margins() { BottomHeight = 1, LeftWidth = 1, RightWidth = 1, TopHeight = 1 };
+                        NativeMethods.DwmExtendFrameIntoClientArea(this.Handle, ref margins);
+                    }
+                    else
+                    {
+                        Margins margins = new Margins() { BottomHeight = 0, LeftWidth = 0, RightWidth = 0, TopHeight = 0 };
+                    }
+                }
             }
         }
 
-        /// <summary>
-        /// Updates the style of this <see cref="BorderlessForm"/>. This method is called after every custom property change which affects the visual appearance. Try calling this method if you try to change something about the form and it does not work as expected.
-        /// </summary>
-        protected virtual void UpdateStyle()
-        {
-            //This should mostly work but it causes some visual errors to occur and failes to load the form's icon so I'm going to disable this option for now and use the quick and not even so dirty alternative way
-            //if (IntPtr.Size == 8)
-            //{
-            //    NativeMethods.SetWindowLongPtr64(this.Handle, GWL_STYLE, new IntPtr(unchecked((int)this.GetWindowStyle())));
-            //}
-            //else
-            //{
-            //    NativeMethods.SetWindowLong32(this.Handle, GWL_STYLE, new IntPtr(unchecked((int)this.GetWindowStyle())));
-            //}
-
-            //if (this.Borderless)
-            //{
-            //    this.InitializeShadow();
-            //}
-
-            //NativeMethods.SetWindowPos(this.Handle, IntPtr.Zero, 0, 0, 0, 0, SWP_FRAMECHANGED | SWP_NOMOVE | SWP_NOSIZE);
-            //this.Show();
-
-            this.RecreateHandle();
-        }
+        ///// <summary>
+        ///// Updates the style of this <see cref="BorderlessForm"/>. This method is called after every custom property change which affects the visual appearance. Try calling this method if you try to change something about the form and it does not work as expected.
+        ///// </summary>
+        //protected virtual void UpdateStyle()
+        //{
+        //    //This should mostly work but it causes some visual errors to occur and failes to load the form's icon so I'm going to disable this option for now and use the quick and not even so dirty alternative way
+        //    //if (IntPtr.Size == 8)
+        //    //{
+        //    //    NativeMethods.SetWindowLongPtr64(this.Handle, GWL_STYLE, new IntPtr(unchecked((int)this.GetWindowStyle())));
+        //    //}
+        //    //else
+        //    //{
+        //    //    NativeMethods.SetWindowLong32(this.Handle, GWL_STYLE, new IntPtr(unchecked((int)this.GetWindowStyle())));
+        //    //}
+        //
+        //    //if (this.Borderless)
+        //    //{
+        //    //    this.InitializeShadow();
+        //    //}
+        //
+        //    //NativeMethods.SetWindowPos(this.Handle, IntPtr.Zero, 0, 0, 0, 0, SWP_FRAMECHANGED | SWP_NOMOVE | SWP_NOSIZE);
+        //    //this.Show();
+        //}
 
 
 
@@ -216,6 +232,11 @@ namespace AeroSuite.Forms
                 if (this.Borderless)
                 {
                     this.InitializeShadow();
+
+                    if (!PlatformHelper.VistaOrHigher || !NativeMethods.DwmIsCompositionEnabled())
+                    {
+                        baseParams.ClassStyle |= CS_DROPSHADOW;
+                    }
                 }
 
                 return baseParams;
@@ -240,18 +261,54 @@ namespace AeroSuite.Forms
                         }
                         break;
                     case (int)WindowsMessages.NonClientHitTest:
-                        m.Result = new IntPtr((int)this.PerformHitTest(new Point(unchecked((short)m.LParam.ToInt64()), unchecked((short)(m.LParam.ToInt64() >> 16)))));
+                        if (this.Borderless)
+                        {
+                            m.Result = new IntPtr((int)this.PerformHitTest(new Point(unchecked((short)m.LParam.ToInt64()), unchecked((short)(m.LParam.ToInt64() >> 16)))));
+                        }
+                        else
+                        {
+                            base.WndProc(ref m);
+                            if (this.AutoDrag && m.Result.ToInt32() == (int)HitTestResult.Client)
+                            {
+                                m.Result = new IntPtr((int)HitTestResult.Caption);
+                            }
+                        }
                         return;
                     case (int)WindowsMessages.NonClientActivate:
-                        if (!(PlatformHelper.VistaOrHigher && NativeMethods.DwmIsCompositionEnabled()))
+                        if (this.Borderless && (!PlatformHelper.VistaOrHigher || !NativeMethods.DwmIsCompositionEnabled()))
                         {
                             m.Result = new IntPtr(1);
+                            return;
                         }
+                        break;
+                    case (int)WindowsMessages.ThemeChanged:
+                    case (int)WindowsMessages.DwmCompositionChanged:
+                        this.RecreateHandle();
                         break;
                 }
             }
 
             base.WndProc(ref m);
+        }
+
+        protected override void OnGotFocus(EventArgs e)
+        {
+            if (this.Borderless && (!PlatformHelper.VistaOrHigher || !NativeMethods.DwmIsCompositionEnabled()))
+            {
+                this.Invalidate();
+            }
+
+            base.OnGotFocus(e);
+        }
+
+        protected override void OnLostFocus(EventArgs e)
+        {
+            if (this.Borderless && (!PlatformHelper.VistaOrHigher || !NativeMethods.DwmIsCompositionEnabled()))
+            {
+                this.Invalidate();
+            }
+
+            base.OnLostFocus(e);
         }
 
 
@@ -282,7 +339,9 @@ namespace AeroSuite.Forms
         {
             NonClientCalcSize = 0x83,
             NonClientHitTest = 0x84,
-            NonClientActivate = 0x86,s
+            NonClientActivate = 0x86,
+            ThemeChanged = 0x31A,
+            DwmCompositionChanged = 0x31E
         }
     }
 

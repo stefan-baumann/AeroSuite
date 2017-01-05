@@ -76,11 +76,18 @@ namespace AeroSuite.Test
 
         private void BorderlessFormTestButton_Click(object sender, EventArgs e)
         {
-            new BorderlessFormTest().ShowDialog();
+            new BorderlessFormTest().Show();
         }
 
         private class BorderlessFormTest
             : BorderlessForm
-        { }
+        {
+            public BorderlessFormTest()
+            {
+                CheckBox borderlessCheckBox = new CheckBox() { Name = "BorderlessCheckBox", Text = "Borderless", Checked = true };
+                this.Controls.Add(borderlessCheckBox);
+                borderlessCheckBox.CheckedChanged += (s, e) => this.Borderless = borderlessCheckBox.Checked;
+            }
+        }
     }
 }
