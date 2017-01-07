@@ -59,7 +59,11 @@ namespace AeroSuite.Controls.Design
         public NavigationButtonType Type
         {
             get => this.Control.Type;
-            set => this.Control.Type = value;
+            set
+            {
+                this.Control.Type = value;
+                this.RefreshControl();
+            }
         }
     }
 }

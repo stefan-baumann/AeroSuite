@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AeroSuite.Controls.Design;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -17,6 +18,7 @@ namespace AeroSuite.Controls
     [DesignerCategory("Code")]
     [DisplayName("Aero ProgressBar")]
     [Description("A progress bar control with extended features.")]
+    [Designer(typeof(AeroProgressBarDesigner))]
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(ProgressBar))]
     public class AeroProgressBar
@@ -83,12 +85,16 @@ namespace AeroSuite.Controls
             }
             set
             {
-                if (this.State != ProgressBarState.Normal)
-                {
-                    throw new InvalidOperationException("It is not possible to modify the progress of a ProgressBar in error or paused state.");
-                }
+                //if (this.State != ProgressBarState.Normal)
+                //{
+                //    throw new InvalidOperationException("It is not possible to modify the progress of a ProgressBar in error or paused state.");
+                //}
 
+                ProgressBarState state = this.State;
+                this.State = ProgressBarState.Normal;
                 base.Value = value;
+                this.State = state;
+                
             }
         }
 

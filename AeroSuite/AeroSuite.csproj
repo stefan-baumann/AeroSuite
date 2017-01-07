@@ -113,6 +113,7 @@
     <Compile Include="Controls\CommandLink.cs" />
     <Compile Include="Controls\CueComboBox.cs" />
     <Compile Include="Controls\CueTextBox.cs" />
+    <Compile Include="Controls\Design\AeroProgressBarDesigner.cs" />
     <Compile Include="Controls\Design\ControlDesignerBase.cs" />
     <Compile Include="Controls\Design\DesignerActionListBase.cs" />
     <Compile Include="Controls\Design\NavigationButtonDesigner.cs" />

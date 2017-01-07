@@ -53,7 +53,6 @@ namespace AeroSuite.Controls
         [RefreshProperties(RefreshProperties.All)]
         [Description("Indicates the type.")]
         [Category("Appearance")]
-        [DisplayName("Type")]
         public virtual NavigationButtonType Type
         {
             get

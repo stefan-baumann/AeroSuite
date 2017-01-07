@@ -84,5 +84,13 @@ namespace AeroSuite.Controls.Design
             }
             return collection;
         }
+
+        /// <summary>
+        /// Refreshes the targeted control.
+        /// </summary>
+        protected void RefreshControl()
+        {
+            (this.GetService(typeof(DesignerActionUIService)) as DesignerActionUIService).Refresh(this.Control);
+        }
     }
 }
