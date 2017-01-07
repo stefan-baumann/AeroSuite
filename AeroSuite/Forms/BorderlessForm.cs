@@ -20,7 +20,7 @@ namespace AeroSuite.Forms
     [DesignerCategory("Code")]
     [DisplayName("Borderless Form")]
     [Description("A borderless form with support")]
-    public abstract class BorderlessForm
+    public class BorderlessForm
         : Form
     {
         private const int CS_DROPSHADOW = 0x20000;
