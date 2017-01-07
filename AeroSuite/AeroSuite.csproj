@@ -113,6 +113,9 @@
     <Compile Include="Controls\CommandLink.cs" />
     <Compile Include="Controls\CueComboBox.cs" />
     <Compile Include="Controls\CueTextBox.cs" />
+    <Compile Include="Controls\Design\ControlDesignerBase.cs" />
+    <Compile Include="Controls\Design\DesignerActionListBase.cs" />
+    <Compile Include="Controls\Design\NavigationButtonDesigner.cs" />
     <Compile Include="Controls\Display.cs" />
     <Compile Include="Controls\CaptionLabel.cs" />
     <Compile Include="Controls\HeaderlessTabControl.cs" />
@@ -162,6 +165,7 @@
   <ItemGroup>
     <None Include="AnimationEngine\AnimationEngine.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

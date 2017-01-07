@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AeroSuite.Controls.Design;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -52,6 +53,7 @@ namespace AeroSuite.Controls
         [RefreshProperties(RefreshProperties.All)]
         [Description("Indicates the type.")]
         [Category("Appearance")]
+        [DisplayName("Type")]
         public virtual NavigationButtonType Type
         {
             get
@@ -278,30 +280,6 @@ namespace AeroSuite.Controls
             }
 
             base.Dispose(disposing);
-        }
-
-
-
-
-        /// <summary>
-        /// Provides a ControlDesigner for the <see cref="NavigationButton"/> Control.
-        /// </summary>
-        internal class NavigationButtonDesigner
-            : ControlDesigner
-        {
-            /// <summary>
-            /// Returns selection rules for the <see cref="NavigationButton"/> Control.
-            /// </summary>
-            /// <value>
-            /// The selection rules.
-            /// </value>
-            public override SelectionRules SelectionRules
-            {
-                get
-                {
-                    return SelectionRules.Moveable;
-                }
-            }
         }
     }
 
